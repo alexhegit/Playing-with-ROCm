@@ -10,7 +10,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 - [QLoRA with Radeon](./training/W7900_QLoRA_Demo.ipynb)
 
 ### Inference
-- [Deploy LLM with Radeon iGPU 780M](./inference/LLM/Run Ollama with AMD iGPU 780M-QuickStart.pdf)
+- [Deploy LLM with Radeon iGPU 780M](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/Run%20Ollama%20with%20AMD%20iGPU%20780M-QuickStart.pdf)
 
 
 ```
