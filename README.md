@@ -12,7 +12,12 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 ### Inference
 - [Deploy LLM with Radeon iGPU 780M](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/Run%20Ollama%20with%20AMD%20iGPU%20780M-QuickStart.pdf)
 
+### Application
+[RAG_LLM_QnA_Assistant](https://github.com/alexhegit/RAG_LLM_QnA_Assistant), Step-by-step tutorial repo project to setup RAG Apps with ROCm
 
+
+
+-------------------------------------------------------------------
 ```
 @misc{AlexTryMachineLearning,
   author =   {He Ye (Alex)},
