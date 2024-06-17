@@ -15,6 +15,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 ### Application
 [RAG_LLM_QnA_Assistant](https://github.com/alexhegit/RAG_LLM_QnA_Assistant), Step-by-step tutorial repo project to setup RAG Apps with ROCm
 
+[Ask4ROCm_Chatbot](https://github.com/alexhegit/Ask4ROCm_Chatbot), An chatbot app drive by RAG solution.
 
 
 -------------------------------------------------------------------
