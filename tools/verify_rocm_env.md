@@ -1,4 +1,6 @@
-# Verify PyTorch installation (refer to https://rocm.docs.amd.com/projects/radeon/en/latest/docs/install/install-pytorch.html#verify-pytorch-installation)
+# Verify PyTorch installation 
+(refer to https://rocm.docs.amd.com/projects/radeon/en/latest/docs/install/install-pytorch.html#verify-pytorch-installation)
+
 Confirm if PyTorch is correctly installed.
 
 1. Verify if Pytorch is installed and detecting the GPU compute device.
