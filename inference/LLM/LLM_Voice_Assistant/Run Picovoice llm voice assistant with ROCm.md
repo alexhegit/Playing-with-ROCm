@@ -23,7 +23,7 @@ Here I will guide you to modify it and run [orca/demo/llm_voice_assistant at mai
 	 cd [orca repo root dir]
 	 git am 0001-deploy-LLM-local-with-Ollama.patch
 	 ```
-   This patch file is provided at here.
+   This patch file is provided at [here](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/LLM_Voice_Assistant/0001-deploy-LLM-local-with-Ollama.patch).
 
 4. Request AccessKey from https://picovoice.ai/ 
 
