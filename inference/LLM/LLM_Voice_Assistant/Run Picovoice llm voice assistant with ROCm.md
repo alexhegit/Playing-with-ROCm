@@ -35,3 +35,24 @@ Here I will guide you to modify it and run [orca/demo/llm_voice_assistant at mai
 	The terminal output "Listening ..." . Please start the talking with your micphone. 
 
 
+```
+Listening ...
+
+Time to wait for ChatGPT (llama3) : >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 3.9s
+Time to wait for Picovoice Orca   : >>>>>>>>>>>>>>>>>>>>>> 0.6s
+Answering with Picovoice Orca ...
+
+
+Listening ...
+
+Time to wait for ChatGPT (llama3) : >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 1.1s
+Time to wait for Picovoice Orca   : >>>>>>>>>>>>>>>>>> 0.5s
+Answering with Picovoice Orca ...
+
+Listening ...
+
+Time to wait for ChatGPT (llama3) : >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 1.1s
+Time to wait for Picovoice Orca   : >>>>>>>>>>>>>>>>>>> 0.5s
+Answering with Picovoice Orca ...
+```
+
