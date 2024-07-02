@@ -22,7 +22,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 
 -------------------------------------------------------------------
 ```
-@misc{Alex Playing with ROCm,
+@misc{ Playing with ROCm,
   author =   {He Ye (Alex)},
   title =    {Playing with ROCm: share my experience and practice},
   howpublished = {\url{https://alexhegit.github.io/}},
