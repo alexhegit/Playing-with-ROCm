@@ -50,7 +50,7 @@ Environment="HSA_OVERRIDE_GFX_VERSION=11.0.0"
 
 Then Reboot the Linux or just restart the ollama.srevice by,
 	 
-  `sudo system restart ollama.service`
+  `sudo systemctl restart ollama.service`
 
 
 ### Check iGPU utilizaion
