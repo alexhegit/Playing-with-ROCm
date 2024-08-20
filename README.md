@@ -19,7 +19,8 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 
 - [LLM_Voice_Assistant](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/LLM_Voice_Assistant/Run%20Picovoice%20llm%20voice%20assistant%20with%20ROCm.md) , Use STT/TTS model from Picovoice.
 
-
+- [Easy-Wav2Lip-ROCm](https://github.com/alexhegit/Easy-Wav2Lip-ROCm), Easy run Wav2Lip with ROCm over AMD GPU. Way2Lip is a project of Generalized Lip Sync Models
+  
 -------------------------------------------------------------------
 ```
 @misc{ Playing with ROCm,
