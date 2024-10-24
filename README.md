@@ -32,8 +32,9 @@ These projects may not offical announce to support ROCm GPU. But it work fine ba
 | EchoMimic | https://github.com/BadToBest/EchoMimic | Digital Human GenAI   | [Run EchoMimic with ROCm](./Digital-Human/EchoMimic.md) |
 | Easy-Wav2Lip | https://github.com/anothermartz/Easy-Wav2Lip | Digital Human GenAI | [Easy-Wav2Lip-ROCm](https://github.com/alexhegit/Easy-Wav2Lip-ROCm) |
 | Moshi  | https://github.com/kyutai-labs/moshi  | Conversation AI |  |
+| mini-omni | https://github.com/gpt-omni/mini-omni   |   |  |
 | Picovoice/orca    | https://github.com/Picovoice/orca   | Conversation AI | [LLM_Voice_Assistant](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/LLM_Voice_Assistant/Run%20Picovoice%20llm%20voice%20assistant%20with%20ROCm.md) |
-|     |    |   |  |
+|  |   |  |
 |     |    |   |  |
 
 
