@@ -27,11 +27,11 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 
 ## Project could worked over ROCm
 These projects may not offical announce to support ROCm GPU. But it work fine base on my verificaion.
-| Name    | URL     | Category |
-| -------- | ------- | ------- |
-| EchoMimic | https://github.com/BadToBest/EchoMimic | Digital Human GenAI   |
-| Moshi  | https://github.com/kyutai-labs/moshi  | Conversation AI   |
-|     |    |   |
+| Name    | URL     | Category | Hands on |
+| -------- | ------- | ------- | ------- |
+| EchoMimic | https://github.com/BadToBest/EchoMimic | Digital Human GenAI   | [Run EchoMimic with ROCm](./Digital-Human/EchoMimic.md) |
+| Moshi  | https://github.com/kyutai-labs/moshi  | Conversation AI   |  |
+|     |    |   |  |
 
 
 
