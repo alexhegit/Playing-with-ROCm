@@ -25,7 +25,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
   
 -------------------------------------------------------------------
 
-## The Project worked over ROCm
+## The Project could worked over ROCm
 | Name    | URL     | Category |
 | -------- | ------- | ------- |
 | EchoMimic | https://github.com/BadToBest/EchoMimic | Digital Human GenAI   |
