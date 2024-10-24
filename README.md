@@ -25,7 +25,8 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
   
 -------------------------------------------------------------------
 
-## The Project could worked over ROCm
+## Project could worked over ROCm
+These projects may not offical announce to support ROCm GPU. But it work fine base on my verificaion.
 | Name    | URL     | Category |
 | -------- | ------- | ------- |
 | EchoMimic | https://github.com/BadToBest/EchoMimic | Digital Human GenAI   |
