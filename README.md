@@ -24,6 +24,19 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 - [Run EchoMimic with ROCm](./Digital-Human/EchoMimic.md) EchoMimic: Lifelike Audio-Driven Portrait Animations through Editable Landmark Conditioning
   
 -------------------------------------------------------------------
+
+## The Project worked over ROCm
+| Name    | URL     | Category |
+| -------- | ------- | ------- |
+| EchoMimic | https://github.com/BadToBest/EchoMimic | Digital Human GenAI   |
+| Moshi  | https://github.com/kyutai-labs/moshi  | Conversation AI   |
+|     |    |   |
+
+
+
+
+-------------------------------------------------------------------
+
 ```
 @misc{ Playing with ROCm,
   author =   {He Ye (Alex)},
