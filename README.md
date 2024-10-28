@@ -25,7 +25,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
   
 -------------------------------------------------------------------
 
-## Project could worked over ROCm
+## Projects work over ROCm
 These projects may not offical announce to support ROCm GPU. But it work fine base on my verificaion.
 | Name    | URL     | Category | Hands on |
 | -------- | ------- | ------- | ------- |
