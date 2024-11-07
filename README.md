@@ -36,11 +36,17 @@ These projects may not offical announce to support ROCm GPU. But it work fine ba
 | mini-omni | https://github.com/gpt-omni/mini-omni   | Conversation AI  |  |
 | mini-omni2 | https://github.com/gpt-omni/mini-omni2   | Conversation AI  |  |
 | Picovoice/orca    | https://github.com/Picovoice/orca   | Conversation AI | [LLM_Voice_Assistant](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/LLM_Voice_Assistant/Run%20Picovoice%20llm%20voice%20assistant%20with%20ROCm.md) |
-|     |   |  |
+|     |   |   |   |
 |     |    |   |  |
 
-
-
+### Wish List
+| Name    | URL     | Category | Hands on |
+| -------- | ------- | ------- | ------- |
+| hertz-dev |https://github.com/Standard-Intelligence/hertz-dev | Conversation AI |
+| Freeze-Omni | https://github.com/VITA-MLLM/Freeze-Omni | Conversation AI |  |
+| CLM-4-Voice | https://github.com/THUDM/GLM-4-Voice | Conversation AI |  |
+| LLaMA-Omni| https://github.com/ictnlp/LLaMA-Omni | Conversation AI |  |
+|||||
 
 -------------------------------------------------------------------
 
