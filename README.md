@@ -46,7 +46,7 @@ These projects may not offical announce to support ROCm GPU. But it work fine ba
 | Freeze-Omni | https://github.com/VITA-MLLM/Freeze-Omni | Conversation AI |  |
 | CLM-4-Voice | https://github.com/THUDM/GLM-4-Voice | Conversation AI |  |
 | LLaMA-Omni| https://github.com/ictnlp/LLaMA-Omni | Conversation AI |  |
-|||||
+|ichigo Llama 3.1 |https://github.com/homebrewltd/ichigo| Conversation AI||
 
 -------------------------------------------------------------------
 
