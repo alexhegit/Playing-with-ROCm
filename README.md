@@ -29,6 +29,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 These projects may not offical announce to support ROCm GPU. But it work fine base on my verificaion.
 | Name    | URL     | Category | Hands on |
 | -------- | ------- | ------- | ------- |
+| CLM-4-Voice | https://github.com/THUDM/GLM-4-Voice | Conversation AI |  |
 | EchoMimic | https://github.com/BadToBest/EchoMimic | Digital Human GenAI   | [Run EchoMimic with ROCm](./Digital-Human/EchoMimic.md) |
 | Easy-Wav2Lip | https://github.com/anothermartz/Easy-Wav2Lip | Digital Human GenAI | [Easy-Wav2Lip-ROCm](https://github.com/alexhegit/Easy-Wav2Lip-ROCm) |
 | GOT-OCR2 | https://github.com/Ucas-HaoranWei/GOT-OCR2.0 | end2end OCR |
@@ -44,11 +45,11 @@ These projects may not offical announce to support ROCm GPU. But it work fine ba
 | -------- | ------- | ------- | ------- |
 | hertz-dev |https://github.com/Standard-Intelligence/hertz-dev | Conversation AI |
 | Freeze-Omni | https://github.com/VITA-MLLM/Freeze-Omni | Conversation AI |  |
-| CLM-4-Voice | https://github.com/THUDM/GLM-4-Voice | Conversation AI |  |
 | LLaMA-Omni| https://github.com/ictnlp/LLaMA-Omni | Conversation AI |  |
 | ichigo Llama 3.1 |https://github.com/homebrewltd/ichigo| Conversation AI||
 | ichigo-demo | https://github.com/homebrewltd/ichigo-demo/tree/docker |||
-
+| Exo | https://github.com/exo-explore/exo |||
+ 
 -------------------------------------------------------------------
 
 ```
