@@ -48,7 +48,7 @@ These projects may not offical announce to support ROCm GPU. But it work fine ba
 | LLaMA-Omni| https://github.com/ictnlp/LLaMA-Omni | Conversation AI |  |
 | ichigo Llama 3.1 |https://github.com/homebrewltd/ichigo| Conversation AI||
 | ichigo-demo | https://github.com/homebrewltd/ichigo-demo/tree/docker |||
-| Exo | https://github.com/exo-explore/exo |||
+| Exo | https://github.com/exo-explore/exo | heterogeneous distribute inference ||
  
 -------------------------------------------------------------------
 
