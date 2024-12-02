@@ -27,7 +27,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 -------------------------------------------------------------------
 
 ## Projects work over ROCm
-These projects may not offical announce to support ROCm GPU. But it work fine base on my verificaion.
+These projects may not offical announce to support ROCm GPU. But they work fine base on my verification.
 | Name    | URL     | Category | Hands on |
 | -------- | ------- | ------- | ------- |
 | CLM-4-Voice | https://github.com/THUDM/GLM-4-Voice | Conversation AI |  |
