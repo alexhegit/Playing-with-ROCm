@@ -53,7 +53,8 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | ichigo Llama 3.1 |https://github.com/homebrewltd/ichigo| Conversation AI||
 | ichigo-demo | https://github.com/homebrewltd/ichigo-demo/tree/docker |||
 | Exo | https://github.com/exo-explore/exo | heterogeneous distribute inference ||
-| Perpleica | https://github.com/ItzCrazyKns/Perplexica | AI Search Engine|
+| Perpleica | https://github.com/ItzCrazyKns/Perplexica | AI Search Engine| issue |
+| ollama-helm |https://github.com/otwld/ollama-helm|||
  
 -------------------------------------------------------------------
 
