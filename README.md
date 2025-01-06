@@ -57,6 +57,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | MiniPerplx| https://github.com/zaidmukaddam/miniperplx | A minimalistic AI-powered search engine | |
 | ollama-helm |https://github.com/otwld/ollama-helm|||
 | OpenHands |https://github.com/All-Hands-AI/OpenHands| a platform for software development agents powered by AI ||
+| HayStack| https://github.com/deepset-ai/haystack | end-to-end LLM framework that allows you to build applications powered by LLMs ||
  
 -------------------------------------------------------------------
 
