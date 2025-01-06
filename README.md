@@ -54,7 +54,9 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | ichigo-demo | https://github.com/homebrewltd/ichigo-demo/tree/docker |||
 | Exo | https://github.com/exo-explore/exo | heterogeneous distribute inference ||
 | Perpleica | https://github.com/ItzCrazyKns/Perplexica | AI Search Engine| issue |
+| MiniPerplx| https://github.com/zaidmukaddam/miniperplx | A minimalistic AI-powered search engine | |
 | ollama-helm |https://github.com/otwld/ollama-helm|||
+| OpenHands |https://github.com/All-Hands-AI/OpenHands| a platform for software development agents powered by AI ||
  
 -------------------------------------------------------------------
 
