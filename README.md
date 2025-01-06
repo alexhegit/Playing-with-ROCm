@@ -25,7 +25,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 
 - [Run LLama-3.2-vision with ROCm](https://medium.com/@alexhe.amd/deploy-llama-3-2-vision-quickly-on-amd-rocm-with-ollama-9a23e9a86fea) Ollama+Llama-3.2-vision+ROCm
 
-- [Deploy vLLM service with Kubernetes over AMD ROCm GPU](https://medium.com/@alexhe.amd/deploy-vllm-service-with-kubernetes-over-amd-rocm-gpu-27cd5321271a)
+- [Deploy vLLM service with Kubernetes over AMD ROCm GPU](https://medium.com/@alexhe.amd/deploy-vllm-service-with-kubernetes-over-amd-rocm-gpu-27cd5321271a) , Turoial with sample codes.
   
 -------------------------------------------------------------------
 
