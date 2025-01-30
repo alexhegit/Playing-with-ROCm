@@ -41,7 +41,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | mini-omni | https://github.com/gpt-omni/mini-omni   | Conversation AI  |  |
 | mini-omni2 | https://github.com/gpt-omni/mini-omni2   | Conversation AI  |  |
 | Picovoice/orca    | https://github.com/Picovoice/orca   | Conversation AI | [LLM_Voice_Assistant](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/LLM_Voice_Assistant/Run%20Picovoice%20llm%20voice%20assistant%20with%20ROCm.md) |
-|     |   |   |   |
+| Retrieval-based-Voice-Conversion-WebUI | https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI.git | Easily train a good VC model with voice data <= 10 mins!   |   |
 |     |    |   |  |
 
 ### Wish List
