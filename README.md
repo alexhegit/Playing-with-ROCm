@@ -61,7 +61,8 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | Bailing |https://github.com/ictnlp/BayLing|||
 | Bailing| https://github.com/wwbin2017/bailing|||
 | BabelDuck |https://github.com/Orenoid/BabelDuck|Beginner-friendly AI conversation practice application||
-| KubeAI| https://github.com/substratusai/kubeai | deploy and manage AI models on Kubernetes |
+| KubeAI| https://github.com/substratusai/kubeai | deploy and manage AI models on Kubernetes ||
+| DSPy | https://dspy.ai | the framework for programming ||
  
 -------------------------------------------------------------------
 
