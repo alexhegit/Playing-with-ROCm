@@ -4,15 +4,23 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 
 
 ## Topics
+
 ### Training
+
 #### Finetuning
+
 - [LoRA with Radeon](./training/W7900_LoRA_Demo.ipynb)
 - [QLoRA with Radeon](./training/W7900_QLoRA_Demo.ipynb)
 
 ### Inference
+
+- [Deploy Deepseek-R1 in one GPU -AMD Instinct™ MI300X](https://medium.com/@alexhe.amd/deploy-deepseek-r1-in-one-gpu-amd-instinct-mi300x-7a9abeb85f78)
+- [Deploy Llama 3.2 Vision quickly on AMD ROCm with Ollama](https://medium.com/@alexhe.amd/deploy-llama-3-2-vision-quickly-on-amd-rocm-with-ollama-9a23e9a86fea)
 - [Deploy LLM with Radeon iGPU 780M](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/Run%20Ollama%20with%20AMD%20iGPU%20780M-QuickStart.pdf)
+- [Deploy Llama 3.2 Vision quickly on AMD ROCm with Ollama](https://medium.com/@alexhe.amd/deploy-llama-3-2-vision-quickly-on-amd-rocm-with-ollama-9a23e9a86fea)
 
 ### Application/Demo
+
 - [RAG_LLM_QnA_Assistant](https://github.com/alexhegit/RAG_LLM_QnA_Assistant), Step-by-step tutorial repo project to setup RAG Apps with ROCm
 
 - [Ask4ROCm_Chatbot](https://github.com/alexhegit/Ask4ROCm_Chatbot), An chatbot app drive by RAG solution.
@@ -30,6 +38,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 -------------------------------------------------------------------
 
 ## Projects work over ROCm
+
 These projects may not offical announce to support ROCm GPU. But they work fine base on my verification.
 | Name    | URL     | Category | Hands on |
 | -------- | ------- | ------- | ------- |
@@ -45,6 +54,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 |     |    |   |  |
 
 ### Wish List
+
 | Name    | URL     | Category | Hands on |
 | -------- | ------- | ------- | ------- |
 | hertz-dev |https://github.com/Standard-Intelligence/hertz-dev | Conversation AI |
