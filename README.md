@@ -74,6 +74,11 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | KubeAI| https://github.com/substratusai/kubeai | deploy and manage AI models on Kubernetes ||
 | DSPy | https://dspy.ai | the framework for programming ||
 | KServe | https://kserve.github.io/website/latest/ |||
+| Freeze-Omni |https://github.com/VITA-MLLM/Freeze-Omni| A Smart and Low Latency Speech-to-speech Dialogue Model with Frozen LLM ||
+
+### Tracing
+- https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models
+- 
  
 -------------------------------------------------------------------
 
