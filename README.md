@@ -56,7 +56,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | Retrieval-based-Voice-Conversion-WebUI | https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI.git | Easily train a good VC model with voice data <= 10 mins!   |   |
 | Freeze-Omni | https://github.com/VITA-MLLM/Freeze-Omni | A Smart and Low Latency Speech-to-speech Dialogue Model with Frozen LLM | Realtime on Radeon W7900, realtime with good response, feel good than Moshi, mini-omni2 |
 | Step-Auido | https://github.com/stepfun-ai/Step-Audio | Convseration AI | Too big model, not real time |
-| Step-Video | https://github.com/stepfun-ai/Step-Video-T2V | Video GenAI | Run with 1xMI300X |
+| Step-Video-T2V | https://github.com/stepfun-ai/Step-Video-T2V | Video GenAI | Run with 1xMI300X |
 |     |    |   |  |
 
 ### Wish List
