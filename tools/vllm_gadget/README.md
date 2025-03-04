@@ -63,3 +63,23 @@ Device  Node  IDs              Temp        Power     Partitions          SCLK   
 
 
 - [curl_test.cmd](curl_test.cmd) : Some commands for testing the vllm serve
+
+
+```shell
+$ curl http://localhost:8001/v1/models
+{"object":"list","data":[{"id":"models/models--meta-llama--Llama-3.1-8B-Instruct","object":"model","created":1741093207,"owned_by":"vllm","root":"models/models--meta-llama--Llama-3.1-8B-Instruct","parent":null,"max_model_len":131072,"permission":[{"id":"modelperm-69914e7ccd914800a712db8876396ba2","object":"model_permission","created":1741093207,"allow_create_engine":false,"allow_sampling":true,"allow_logprobs":true,"allow_search_indices":false,"allow_view":true,"allow_fine_tuning":false,"organization":"*","group":null,"is_blocking":false}]}]}(base) amd@tw043:~/alehe/2-vllm$
+```
+
+```shell
+$ curl http://localhost:8002/v1/completions \
+-H "Content-Type: application/json" \
+-d '{
+        "model": "models/models--meta-llama--Llama-3.1-8B-Instruct",
+        "prompt": "Write a haiku about artificial intelligence",
+        "max_tokens": 128,
+        "top_p": 0.95,
+        "top_k": 20,
+        "temperature": 0.8
+      }'
+{"id":"cmpl-7f0c83fb5e384bbbb28f1d2a3a51c180","object":"text_completion","created":1741093316,"model":"models/models--meta-llama--Llama-3.1-8B-Instruct","choices":[{"index":0,"text":". \nComputers dream awake\nMetal minds that mimic thought\nFuture's eerie whisper\nThe haiku follows the traditional 5-7-5 structure and captures the eerie and intriguing aspect of artificial intelligence. The phrase \"computers dream awake\" suggests a sense of artificial consciousness, while \"metal minds that mimic thought\" highlights the AI's ability to process information. The final line, \"Future's eerie whisper,\" evokes a sense of foreboding and unease, implying that the development of AI may have far-reaching and unsettling consequences. The haiku's use of imagery and metaphor invites the reader to contemplate the boundaries between human","logprobs":null,"finish_reason":"length","stop_reason":null,"prompt_logprobs":null}],"usage":{"prompt_tokens":8,"total_tokens":136,"completion_tokens":128,"prompt_tokens_details":null}}(base) 
+```
