@@ -18,7 +18,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 - [Deploy Llama 3.2 Vision quickly on AMD ROCm with Ollama](https://medium.com/@alexhe.amd/deploy-llama-3-2-vision-quickly-on-amd-rocm-with-ollama-9a23e9a86fea)
 - [Deploy vLLM service with Kubernetes over AMD ROCm GPU](https://medium.com/@alexhe.amd/deploy-vllm-service-with-kubernetes-over-amd-rocm-gpu-27cd5321271a)
 - [Deploy LLM with Radeon iGPU 780M](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/Run%20Ollama%20with%20AMD%20iGPU%20780M-QuickStart.pdf)
-- [Example for using vLLM with ROCm](https://github.com/alexhegit/Playing-with-ROCm/blob/main/tools/vllm_gadget/README.md)
+- [Example for using vLLM with ROCm](https://github.com/alexhegit/Playing-with-ROCm/blob/main/tools/vllm_gadget/README.md)  🆕 🔥
     - Help scripts to fast use vLLM with ROCm
     - Example: run multiple containers of vllm serve. e.g. gpu=0,1 for container-1 and gpu=6,7 for container-2. 
 
@@ -54,9 +54,9 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | mini-omni2 | https://github.com/gpt-omni/mini-omni2   | Conversation AI  |  |
 | Picovoice/orca    | https://github.com/Picovoice/orca   | Conversation AI | [LLM_Voice_Assistant](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/LLM_Voice_Assistant/Run%20Picovoice%20llm%20voice%20assistant%20with%20ROCm.md) |
 | Retrieval-based-Voice-Conversion-WebUI | https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI.git | Easily train a good VC model with voice data <= 10 mins!   |   |
-| Freeze-Omni | https://github.com/VITA-MLLM/Freeze-Omni | A Smart and Low Latency Speech-to-speech Dialogue Model with Frozen LLM | Realtime on Radeon W7900, realtime with good response, feel good than Moshi, mini-omni2 |
-| Step-Auido | https://github.com/stepfun-ai/Step-Audio | Convseration AI | Too big model, not real time |
-| Step-Video-T2V | https://github.com/stepfun-ai/Step-Video-T2V | Video GenAI | Run with 1xMI300X |
+| Freeze-Omni 🆕 🔥| https://github.com/VITA-MLLM/Freeze-Omni | A Smart and Low Latency Speech-to-speech Dialogue Model with Frozen LLM | Realtime on Radeon W7900, realtime with good response, feel good than Moshi, mini-omni2 |
+| Step-Auido 🆕 🔥| https://github.com/stepfun-ai/Step-Audio | Convseration AI | Too big model, not real time |
+| Step-Video-T2V 🆕 🔥| https://github.com/stepfun-ai/Step-Video-T2V | Video GenAI | Run with 1xMI300X |
 |     |    |   |  |
 
 ### Wish List
