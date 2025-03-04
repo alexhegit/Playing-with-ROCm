@@ -18,6 +18,9 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 - [Deploy Llama 3.2 Vision quickly on AMD ROCm with Ollama](https://medium.com/@alexhe.amd/deploy-llama-3-2-vision-quickly-on-amd-rocm-with-ollama-9a23e9a86fea)
 - [Deploy vLLM service with Kubernetes over AMD ROCm GPU](https://medium.com/@alexhe.amd/deploy-vllm-service-with-kubernetes-over-amd-rocm-gpu-27cd5321271a)
 - [Deploy LLM with Radeon iGPU 780M](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/Run%20Ollama%20with%20AMD%20iGPU%20780M-QuickStart.pdf)
+- [Example for using vLLM with ROCm](https://github.com/alexhegit/Playing-with-ROCm/blob/main/tools/vllm_gadget/README.md)
+    - Help script to fast use vLLM with ROCm
+    - Start multiple instatance containers for vllm serve. e.g. gpu=0,1 for instance 1 and gpu=6,7 for instance 2. 
 
 ### Application/Demo
 
