@@ -13,7 +13,12 @@ I put some help scripts for using vLLM with ROCm.
   e.g.
   drun --name rocm-vllm-serve rocm/vllm-dev:main
   ```
+
 - [multi_vllm_serve.sh](multi_vllm_serve.sh) : An example to run multiple container instance of vllm serve.
+  
+  Container 1: vllm serve with gpu=0,1
+
+  Container 2: vllm serve with gpu=6,7
 
   Usage:
   
