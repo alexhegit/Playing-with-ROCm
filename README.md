@@ -54,6 +54,9 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | mini-omni2 | https://github.com/gpt-omni/mini-omni2   | Conversation AI  |  |
 | Picovoice/orca    | https://github.com/Picovoice/orca   | Conversation AI | [LLM_Voice_Assistant](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/LLM_Voice_Assistant/Run%20Picovoice%20llm%20voice%20assistant%20with%20ROCm.md) |
 | Retrieval-based-Voice-Conversion-WebUI | https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI.git | Easily train a good VC model with voice data <= 10 mins!   |   |
+| Freeze-Omni | https://github.com/VITA-MLLM/Freeze-Omni | A Smart and Low Latency Speech-to-speech Dialogue Model with Frozen LLM | Realtime on Radeon W7900, realtime with good response, feel good than Moshi, mini-omni2 |
+| Step-Auido | https://github.com/stepfun-ai/Step-Audio | Convseration AI | Too big model, not real time |
+| Step-Video | https://github.com/stepfun-ai/Step-Video-T2V | Video GenAI | Run with 1xMI300X |
 |     |    |   |  |
 
 ### Wish List
@@ -77,8 +80,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | KubeAI| https://github.com/substratusai/kubeai | deploy and manage AI models on Kubernetes ||
 | DSPy | https://dspy.ai | the framework for programming ||
 | KServe | https://kserve.github.io/website/latest/ |||
-| Freeze-Omni | https://github.com/VITA-MLLM/Freeze-Omni | A Smart and Low Latency Speech-to-speech Dialogue Model with Frozen LLM ||
-| Step-Auido | https://github.com/stepfun-ai/Step-Audio | | |
+
 
 ### Tracing
 - https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models
