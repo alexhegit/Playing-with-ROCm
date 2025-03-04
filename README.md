@@ -95,8 +95,8 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 
 ```
 @misc{ Playing with ROCm,
-  author =   {He Ye (Alex)},
-  title =    {Playing with ROCm: share my experience and practice},
+  author = {He Ye (Alex)},
+  title = {Playing with ROCm: share my experience and practice},
   howpublished = {\url{https://alexhegit.github.io/}},
   year = {2024--}
 }
