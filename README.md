@@ -2,7 +2,7 @@
 
 Here to show my experience about playing with ROCm with runable code, step-by-step tutorial to help you reproduce what I have did. If you have iGPU or dGPU of AMD, you may try Machine Learning with them. 
 
-**NOTICE** : For you to easy tracking my update, I use 🆕 and 🔥 to flag the new hot topics.
+**NOTICE** : For more easier tracking my update, I use 🆕 and 🔥 to flag the new hot topics.
 
 ## Topics
 
