@@ -33,7 +33,7 @@ drun --name vllm-s1 -e HIP_VISIBLE_DEVICES="0,1" $DIMG vllm serve $MODEL -tp 2 -
 echo "Container vllm-s1 started"
 
 echo "Starting container vllm-s2"
-drun --name vllm-s2 -e HIP_VISIBLE_DEVICES="0,1" $DIMG vllm serve $MODEL -tp 2 --port 8002 &
+drun --name vllm-s2 -e HIP_VISIBLE_DEVICES="6,7" $DIMG vllm serve $MODEL -tp 2 --port 8002 &
 echo "Container vllm-s2 started"
 
 wait
