@@ -2,6 +2,7 @@
 
 Here to show my experience about playing with ROCm with runable code, step-by-step tutorial to help you reproduce what I have did. If you have iGPU or dGPU of AMD, you may try Machine Learning with them. 
 
+**NOTICE** : For you to easy tracking my update, I use 🆕 and 🔥 to flag the new hot topics.
 
 ## Topics
 
@@ -20,22 +21,23 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 - [Deploy LLM with Radeon iGPU 780M](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/Run%20Ollama%20with%20AMD%20iGPU%20780M-QuickStart.pdf)
 - [Example for using vLLM with ROCm](https://github.com/alexhegit/Playing-with-ROCm/blob/main/tools/vllm_gadget/README.md)  🆕 🔥
     - Help scripts to fast use vLLM with ROCm
-    - Example: run multiple containers of vllm serve. e.g. gpu=0,1 for container-1 and gpu=6,7 for container-2. 
+    - Example: run multiple containers of vllm serve. e.g. gpu=0,1 for container-1 and gpu=6,7 for container-2.
+ 
+### MLOPS with ROCm
+
+- vLLM
+    - [Neural Magic vLLM, nm-vllm](https://docs.neuralmagic.com)
+    - [AIBrix](https://aibrix.readthedocs.io/latest/index.html)
+    - [vLLM Production Stack](https://docs.vllm.ai/en/latest/deployment/integrations/production-stack.html)
 
 ### Application/Demo
 
 - [RAG_LLM_QnA_Assistant](https://github.com/alexhegit/RAG_LLM_QnA_Assistant), Step-by-step tutorial repo project to setup RAG Apps with ROCm
-
 - [Ask4ROCm_Chatbot](https://github.com/alexhegit/Ask4ROCm_Chatbot), An chatbot app drive by RAG solution.
-
 - [LLM_Voice_Assistant](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/LLM_Voice_Assistant/Run%20Picovoice%20llm%20voice%20assistant%20with%20ROCm.md) , Use STT/TTS model from Picovoice.
-
 - [Easy-Wav2Lip-ROCm](https://github.com/alexhegit/Easy-Wav2Lip-ROCm), Easy run Wav2Lip with ROCm over AMD GPU. Way2Lip is a project of Generalized Lip Sync Models
-
 - [Run EchoMimic with ROCm](./Digital-Human/EchoMimic.md) EchoMimic: Lifelike Audio-Driven Portrait Animations through Editable Landmark Conditioning
-
 - [Run LLama-3.2-vision with ROCm](https://medium.com/@alexhe.amd/deploy-llama-3-2-vision-quickly-on-amd-rocm-with-ollama-9a23e9a86fea) Ollama+Llama-3.2-vision+ROCm
-
 - [Deploy vLLM service with Kubernetes over AMD ROCm GPU](https://medium.com/@alexhe.amd/deploy-vllm-service-with-kubernetes-over-amd-rocm-gpu-27cd5321271a) , Turoial with sample codes.
   
 -------------------------------------------------------------------
@@ -59,6 +61,8 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | Step-Video-T2V 🆕 🔥| https://github.com/stepfun-ai/Step-Video-T2V | Video GenAI | Run with 1xMI300X |
 |     |    |   |  |
 
+
+
 ### Wish List
 
 | Name    | URL     | Category | Hands on |
@@ -80,6 +84,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | KubeAI| https://github.com/substratusai/kubeai | deploy and manage AI models on Kubernetes ||
 | DSPy | https://dspy.ai | the framework for programming ||
 | KServe | https://kserve.github.io/website/latest/ |||
+
 
 
 ### Tracing
