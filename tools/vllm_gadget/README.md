@@ -1,4 +1,4 @@
-I put some help scipts to using vLLM with ROCm.
+I put some help scripts for using vLLM with ROCm.
 
 ## File List:
 
