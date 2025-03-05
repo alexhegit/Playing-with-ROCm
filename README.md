@@ -28,6 +28,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 - vLLM
     - [Neural Magic vLLM, nm-vllm](https://docs.neuralmagic.com)
     - [AIBrix](https://aibrix.readthedocs.io/latest/index.html)
+    - [KubeAI](https://github.com/substratusai/kubeai) : AI Inferencing Operator
     - [vLLM Production Stack](https://docs.vllm.ai/en/latest/deployment/integrations/production-stack.html)
 
 ### Application/Demo
