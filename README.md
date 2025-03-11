@@ -21,7 +21,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 - [Deploy LLM with Radeon iGPU 780M](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/Run%20Ollama%20with%20AMD%20iGPU%20780M-QuickStart.pdf)
 - [Examples of using vLLM with ROCm](https://github.com/alexhegit/Playing-with-ROCm/blob/main/tools/vllm_gadget/README.md)  🆕 🔥
     - Help scripts to fast use vLLM with ROCm
-    - Example: run multiple containers of vllm serve. e.g. gpu=0,1 for container-1 and gpu=6,7 for container-2.
+    - Example: using docker compose to run multiple containers of vllm serve. e.g. gpu=0,1 for container-1 and gpu=6,7 for container-2.
  
 ### MLOPS with ROCm
 
