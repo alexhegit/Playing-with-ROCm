@@ -85,6 +85,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | KubeAI| https://github.com/substratusai/kubeai | deploy and manage AI models on Kubernetes ||
 | DSPy | https://dspy.ai | the framework for programming ||
 | KServe | https://kserve.github.io/website/latest/ |||
+| Camel-ai/OWL | https://github.com/camel-ai/owl |||
 
 
 
