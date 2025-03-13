@@ -86,6 +86,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | DSPy | https://dspy.ai | the framework for programming ||
 | KServe | https://kserve.github.io/website/latest/ |||
 | Camel-ai/OWL | https://github.com/camel-ai/owl |||
+| VITA| https://github.com/VITA-MLLM/VITA | VITA-1.5: Towards GPT-4o Level Real-Time Vision and Speech Interaction ||
 
 
 
