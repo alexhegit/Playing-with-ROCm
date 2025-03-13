@@ -87,6 +87,8 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | KServe | https://kserve.github.io/website/latest/ |||
 | Camel-ai/OWL | https://github.com/camel-ai/owl |||
 | VITA| https://github.com/VITA-MLLM/VITA | VITA-1.5: Towards GPT-4o Level Real-Time Vision and Speech Interaction ||
+| DiffRhythm | https://github.com/ASLP-lab/DiffRhythm | End-to-End Full-Length Song Generation with Latent Diffusion | |
+| Open-Sora | https://github.com/hpcaitech/Open-Sora | | |
 
 
 
