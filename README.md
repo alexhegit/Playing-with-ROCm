@@ -60,7 +60,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | Freeze-Omni 🆕 🔥| https://github.com/VITA-MLLM/Freeze-Omni | A Smart and Low Latency Speech-to-speech Dialogue Model with Frozen LLM | Realtime on Radeon W7900, realtime with good response, feel good than Moshi, mini-omni2 |
 | Step-Auido 🆕 🔥| https://github.com/stepfun-ai/Step-Audio | Convseration AI | Too big model, not real time |
 | Step-Video-T2V 🆕 🔥| https://github.com/stepfun-ai/Step-Video-T2V | Video GenAI | Run with 1xMI300X |
-| UI-TARS | https://github.com/bytedance/UI-TARS | UI interact with AI Agent from ByteDance  |  |
+| UI-TARS | https://github.com/bytedance/UI-TARS | Automated GUI Interaction with Native Agentsfrom ByteDance  |  |
 
 
 
