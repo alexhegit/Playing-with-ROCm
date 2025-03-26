@@ -1,0 +1,96 @@
+services:
+  vllm-s1:
+    image: ${VLLM_IMAGE:-rocm/vllm:rocm6.3.1_mi300_ubuntu22.04_py3.12_vllm_0.6.6}
+    environment:
+      HIP_VISIBLE_DEVICES: "0,1"
+      HIP_FORCE_DEV_KERNARG: "1"
+      NCCL_MIN_NCHANNELS: "112"
+      TORCH_BLAS_PREFER_HIPBLASLT: "1" 
+    volumes:
+      - ${HOME}:/ws
+    working_dir: /ws/models
+    command: >
+      vllm serve
+      models--amd--Llama-3.1-70B-Instruct-FP8-KV
+      --trust-remote-code
+      --kv-cache-dtype=fp8
+      --max-model-len=65536
+      --max-num-batched-token=65536
+      --max-num-seqs=1024
+      --gpu-memory-utilization=0.9 
+      -tp 2
+      --port 8001
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    sysctls:
+      - net.ipv4.ip_forward=1
+    deploy:
+      resources:
+        limits:
+          cpus: '8.0'
+          memory: 16g
+        reservations:
+          cpus: '4.0'
+          memory: 8g
+    security_opt:
+      - seccomp=unconfined
+      - apparmor=unconfined
+    cap_add:
+      - SYS_PTRACE
+      - CAP_SYS_ADMIN
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+      - /dev/mem:/dev/mem
+    group_add:
+      - video
+    ports:
+      - "8001:8001"
+
+  vllm-s2:
+    image: ${VLLM_IMAGE:-rocm/vllm:rocm6.3.1_mi300_ubuntu22.04_py3.12_vllm_0.6.6}
+    environment:
+      HIP_VISIBLE_DEVICES: "6,7"
+      HIP_FORCE_DEV_KERNARG: "1"
+      NCCL_MIN_NCHANNELS: "112"
+      TORCH_BLAS_PREFER_HIPBLASLT: "1" 
+    volumes:
+      - ${HOME}:/ws
+    working_dir: /ws/models
+    command: >
+      vllm serve
+      models--amd--Llama-3.1-70B-Instruct-FP8-KV
+      --trust-remote-code
+      --kv-cache-dtype=fp8
+      --max-model-len=65536
+      --max-num-batched-token=65536
+      --max-num-seqs=1024
+      --gpu-memory-utilization=0.9 
+      -tp 2
+      --port 8002
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    sysctls:
+      - net.ipv4.ip_forward=1
+    deploy:
+      resources:
+        limits:
+          cpus: '8.0'
+          memory: 16g
+        reservations:
+          cpus: '4.0'
+          memory: 8g
+    security_opt:
+      - seccomp=unconfined
+      - apparmor=unconfined
+    cap_add:
+      - SYS_PTRACE
+      - CAP_SYS_ADMIN
+    devices:
+      - /dev/kfd:/dev/kfd
+      - /dev/dri:/dev/dri
+      - /dev/mem:/dev/mem
+    group_add:
+      - video
+    ports:
+      - "8002:8002"
