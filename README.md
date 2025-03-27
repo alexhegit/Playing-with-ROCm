@@ -40,6 +40,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 - [Run EchoMimic with ROCm](./Digital-Human/EchoMimic.md) EchoMimic: Lifelike Audio-Driven Portrait Animations through Editable Landmark Conditioning
 - [Run LLama-3.2-vision with ROCm](https://medium.com/@alexhe.amd/deploy-llama-3-2-vision-quickly-on-amd-rocm-with-ollama-9a23e9a86fea) Ollama+Llama-3.2-vision+ROCm
 - [Deploy vLLM service with Kubernetes over AMD ROCm GPU](https://medium.com/@alexhe.amd/deploy-vllm-service-with-kubernetes-over-amd-rocm-gpu-27cd5321271a) , Turoial with sample codes.
+- [Play Qwen2.5–Omni with AMD GPU](https://medium.com/@alexhe.amd/play-qwen2-5-omni-with-amd-gpu-9d80de58589a) 🆕 🔥
   
 -------------------------------------------------------------------
 
@@ -61,6 +62,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | Step-Auido 🆕 🔥| https://github.com/stepfun-ai/Step-Audio | Convseration AI | Too big model, not real time |
 | Step-Video-T2V 🆕 🔥| https://github.com/stepfun-ai/Step-Video-T2V | Video GenAI | Run with 1xMI300X |
 | UI-TARS | https://github.com/bytedance/UI-TARS | Automated GUI Interaction with Native Agentsfrom ByteDance  |  |
+| Qwen2.5-Omni 🆕 🔥|https://github.com/QwenLM/Qwen2.5-Omni | end-to-end multimodal model in the Qwen serie | | 
 
 
 
