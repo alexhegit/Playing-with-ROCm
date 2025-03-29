@@ -98,6 +98,10 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 - [Awesome-Multimodel-LLM](https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models)
 - [Utiliy scripts of modal-labs/llm-serving](https://github.com/modal-labs/modal-examples/tree/main/06_gpu_and_ml/llm-serving)
 
+### Misc
+[write-my-first-mcp-server](https://medium.com/@alexhe.amd/write-my-first-mcp-server-e67a747aacc6)
+
+
 ### 3rd Turtorial
 - https://ploomber.io/blog/vllm-deploy/
 - 
