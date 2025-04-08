@@ -92,6 +92,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | DiffRhythm | https://github.com/ASLP-lab/DiffRhythm | End-to-End Full-Length Song Generation with Latent Diffusion | |
 | Open-Sora | https://github.com/hpcaitech/Open-Sora | | |
 | Real-Time-Voice-Cloning |https://github.com/CorentinJ/Real-Time-Voice-Cloning| | |
+| OpenVoice | https://github.com/myshell-ai/OpenVoice |||
 
 
 
