@@ -63,7 +63,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | Step-Video-T2V 🆕 🔥| https://github.com/stepfun-ai/Step-Video-T2V | Video GenAI | Run with 1xMI300X |
 | UI-TARS | https://github.com/bytedance/UI-TARS | Automated GUI Interaction with Native Agentsfrom ByteDance  |  |
 | Qwen2.5-Omni 🆕 🔥|https://github.com/QwenLM/Qwen2.5-Omni | end-to-end multimodal model in the Qwen serie | | 
-| CosyVoice| https://github.com/FunAudioLLM/CosyVoice | TTS LLM | Work fine with ROCm, ![conda-env](./conda-env/cosyvoice-env.yml) |
+| CosyVoice| https://github.com/FunAudioLLM/CosyVoice | TTS LLM | Using ![conda-env](./conda-env/cosyvoice-env.yml) |
 
 
 
