@@ -107,9 +107,9 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 - [write-my-first-mcp-server](https://medium.com/@alexhe.amd/write-my-first-mcp-server-e67a747aacc6)
 
 
-### 3rd Turtorial
-- https://ploomber.io/blog/vllm-deploy/
-- 
+### 3rd-stuff
+- [Tutorial: vLLM deploy](https://ploomber.io/blog/vllm-deploy/)
+- [Summary: Awesome-Agent-Framework](https://github.com/AgentSpaceAI/Awesome-Agent-Framework)
  
 -------------------------------------------------------------------
 
