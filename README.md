@@ -109,7 +109,9 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 
 ### 3rd-stuff
 - [Tutorial: vLLM deploy](https://ploomber.io/blog/vllm-deploy/)
-- [Summary: Awesome-Agent-Framework](https://github.com/AgentSpaceAI/Awesome-Agent-Framework)
+- Summary: Awesome-Agent-Framework
+      - https://github.com/AgentSpaceAI/Awesome-Agent-Framework
+      - https://github.com/kyrolabs/awesome-agents
  
 -------------------------------------------------------------------
 
