@@ -94,6 +94,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | Open-Sora | https://github.com/hpcaitech/Open-Sora | | |
 | Real-Time-Voice-Cloning |https://github.com/CorentinJ/Real-Time-Voice-Cloning| | |
 | OpenVoice | https://github.com/myshell-ai/OpenVoice |||
+| KrilinAI |https://github.com/krillinai/KrillinAI|||
 
 
 
