@@ -106,6 +106,7 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 
 #### MCP 
 - [write-my-first-mcp-server](https://medium.com/@alexhe.amd/write-my-first-mcp-server-e67a747aacc6)
+- [write-my-first-mcp-client](https://medium.com/@alexhe.amd/my-first-mcp-client-36e4a222f31b)
 
 
 ### 3rd-stuff
