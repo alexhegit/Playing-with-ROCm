@@ -87,11 +87,16 @@ $ curl http://localhost:8002/v1/completions \
 Another way test base on OpenAI compatable API is,
 
 [server]
+
+```shell
 python -m vllm.entrypoints.api_server --model /ws/models/microsoft/Phi-4-mini-instruct --dtype float16  --trust_remote_code --port 8000 &
+```
 
 [client]
-curl http://localhost:8000/generate -H "Content-Type: application/json" -d '{"prompt": "What is AMD Instinct?", "max_tokens": 80, "temperature": 0.0 }'![image](https://github.com/user-attachments/assets/89e2ffcc-279d-496f-b7d5-f0095bd745c1)
 
+```shell
+curl http://localhost:8000/generate -H "Content-Type: application/json" -d '{"prompt": "What is AMD Instinct?", "max_tokens": 80, "temperature": 0.0 }'![image](https://github.com/user-attachments/assets/89e2ffcc-279d-496f-b7d5-f0095bd745c1)
+```
 
 
 
