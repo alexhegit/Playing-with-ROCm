@@ -95,7 +95,7 @@ python -m vllm.entrypoints.api_server --model /ws/models/microsoft/Phi-4-mini-in
 [client]
 
 ```shell
-curl http://localhost:8000/generate -H "Content-Type: application/json" -d '{"prompt": "What is AMD Instinct?", "max_tokens": 80, "temperature": 0.0 }'![image](https://github.com/user-attachments/assets/89e2ffcc-279d-496f-b7d5-f0095bd745c1)
+curl http://localhost:8000/generate -H "Content-Type: application/json" -d '{"prompt": "What is AMD Instinct?", "max_tokens": 80, "temperature": 0.0 }'
 ```
 
 
