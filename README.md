@@ -95,6 +95,8 @@ These projects may not offical announce to support ROCm GPU. But they work fine 
 | Real-Time-Voice-Cloning |https://github.com/CorentinJ/Real-Time-Voice-Cloning| | |
 | OpenVoice | https://github.com/myshell-ai/OpenVoice |||
 | KrilinAI |https://github.com/krillinai/KrillinAI|||
+| RealtimeVoiceChat | https://github.com/KoljaB/RealtimeVoiceChat |||
+| pipecat| https://github.com/pipecat-ai/pipecat |||
 
 
 
