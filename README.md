@@ -6,6 +6,10 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 
 ## Topics
 
+### Pysical AI & Robotics
+
+- [Create Virtual Reachy MINI Conversaion Robot with Mujoco at local](https://github.com/alexhegit/ReachyMiniChat)
+
 ### Training
 
 #### Finetuning
