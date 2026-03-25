@@ -9,6 +9,7 @@ Here to show my experience about playing with ROCm with runable code, step-by-st
 ### Pysical AI & Robotics
 
 - [Create Virtual Reachy MINI Conversaion Robot with Mujoco at local](https://github.com/alexhegit/ReachyMiniChat) 🆕
+- [ROCm Robotics RL Lab](https://github.com/alexhegit/ROCm_Robotics_RL_Lab) - 🆕🔥, I create this new repo with a sim & RL lab - lift cube with Panda Arm robot in Simulation. 
 
 ### Training
 
