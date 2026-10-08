@@ -28,14 +28,14 @@ Upstream is one English page. Both READMEs link to `upstream/README.md`. Do not 
 
 ## Page shape
 
-Numbered jump table first, then one section per row. Put `<a id="..."></a>` before each heading. GitHub's heading slugs are unreliable for Chinese, so both languages share these ids: `by-machine`, `real2sim`, `simulation`, `rl-and-vla`, `robots`, `inference`, `upstream`, `earlier`.
+Numbered jump table first, then one section per row. Put `<a id="..."></a>` before each heading. GitHub's heading slugs are unreliable for Chinese, so both languages share these ids: `top3`, `by-machine`, `real2sim`, `simulation`, `rl-and-vla`, `robots`, `inference`, `upstream`, `earlier`. The first section is titled TOP 3 in both languages. It holds at most three briefs, newest first. A fourth brief replaces the oldest. Do not move a dropped brief to `history/`. The project row in its own section stays. Each brief names the version or date, one result, and the machine. When the same news was posted on LinkedIn, add that post URL on the item. Both READMEs share the URL; the Chinese page says the post is in English. Numbers come from the release or the ledger in the project repo. Later sections keep the three-column project tables.
 
 Front-page project tables have three columns: project, one sentence, verified hardware. Name the GPU and the ROCm or image tag when they are known. Use `—` when the machine was not recorded. History links stay in the same language. The upstream link always points at the English page; the Chinese README says that page is in English.
 
 ```markdown
 <a id="real2sim"></a>
 
-## 2 · Real2Sim
+## 3 · Real2Sim
 
 | Project | What | Verified on |
 | --- | --- | --- |

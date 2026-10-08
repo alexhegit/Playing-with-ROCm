@@ -6,18 +6,39 @@
 
 | | 板块 | 你想找的是 |
 | --- | --- | --- |
-| 1 | [按机器](#by-machine) | Strix Halo、MI300X 或 Radeon 独显上先打开什么 |
-| 2 | [Real2Sim](#real2sim) | 扫描、动态场景、立体深度 |
-| 3 | [仿真](#simulation) | 遥操作、数据集、MuJoCo |
-| 4 | [强化学习与 VLA](#rl-and-vla) | 会抓、会走、会跟速度的策略 |
-| 5 | [机器人](#robots) | 能对话、能看、能拍照的桌面机器人 |
-| 6 | [推理](#inference) | 可以自己编译的 HIP 引擎 |
-| 7 | [上游 PR](upstream/README.md) | 送给其他项目、让它们能在 AMD GPU 上跑的改动 |
-| 8 | [2024–2025](#earlier) | 更早的教程，2026-10 未复测 |
+| 1 | [TOP 3](#top3) | 刚发布的 |
+| 2 | [按机器](#by-machine) | Strix Halo、MI300X 或 Radeon 独显上先打开什么 |
+| 3 | [Real2Sim](#real2sim) | 扫描、动态场景、立体深度 |
+| 4 | [仿真](#simulation) | 遥操作、数据集、MuJoCo |
+| 5 | [强化学习与 VLA](#rl-and-vla) | 会抓、会走、会跟速度的策略 |
+| 6 | [机器人](#robots) | 能对话、能看、能拍照的桌面机器人 |
+| 7 | [推理](#inference) | 可以自己编译的 HIP 引擎 |
+| 8 | [上游 PR](upstream/README.md) | 送给其他项目、让它们能在 AMD GPU 上跑的改动 |
+| 9 | [2024–2025](#earlier) | 更早的教程，2026-10 未复测 |
+
+<a id="top3"></a>
+
+## 1 · TOP 3
+
+最多三条，新的在前。来了第四条，就去掉最旧的一条。有 LinkedIn 动态时，链在对应那条上。动态是英文。
+
+**2026-10-07 · [h3-hip.c v0.15.0](https://github.com/alexhegit/h3-hip.c/releases/tag/v0.15.0)。** FastH3 路径默认关闭：`--fasth3-lora`（稠密 4 步 LoRA）、`--taeh3`（小视频解码器）、`--vsa`（稀疏视频注意力）。Prompt 1、1344×768、5 秒、单卡 MI300X：
+
+| 路径 | 时间 |
+| --- | --- |
+| 稠密 50 步 | 668 秒 |
+| FastH3 | 97 秒 |
+| VSA + TAEH3 | 62 秒 |
+
+FastH3 和 VSA+TAEH3 是 4 步，不是 NVIDIA 公布的 50 步方案。62 秒的单卡 MI300X 快过已公布的 RTX 5090 全优化（231 秒）和 4 卡 H100 基线（81 秒）。4 卡 H100 全优化仍然更快（23 秒）。这一版没有重测 gfx1151 和 gfx90a。账本：[MI300X 对比 NVIDIA，768p](https://github.com/alexhegit/h3-hip.c/blob/main/docs/perf-runs/MI300X_VS_NVIDIA_768P_2026-10-07.md)。
+
+**2026-08-29 · [UniLab 里的 MicroDuck 步态](https://github.com/Motphys/UniLab/pull/1368)。** Pollen Robotics 的 Hugging Face 小型双足。MuJoCo 上的速度任务，PPO 和 SAC。已合并。[LinkedIn](https://www.linkedin.com/posts/alexhegit_microduck-gait-rl-in-unilab-native-rocm-activity-7499461871222231040-HV_P)：在 Radeon Pro W7900 上，用 UniLab 自带的 ROCm 路径训练。
+
+**2026-07-17 · [SO-101 SimStudio](https://github.com/rocPAI-Forge/so101-simstudio)。** 键盘、Joy-Con 或主臂遥操作，录成 LeRobot v3.0。采集版 v0.1.2。Ubuntu 24.04 + ROCm，面向 Ryzen AI 笔记本或 mini PC。[LinkedIn](https://www.linkedin.com/posts/alexhegit_so-101-simstudio-is-open-source-starting-activity-7483870972219957249-9Gt2)。
 
 <a id="by-machine"></a>
 
-## 1 · 按机器
+## 2 · 按机器
 
 | 机器 | 先打开 |
 | --- | --- |
@@ -27,7 +48,7 @@
 
 <a id="real2sim"></a>
 
-## 2 · Real2Sim
+## 3 · Real2Sim
 
 扫描、视频和立体视觉，收成仿真能用的场景。
 
@@ -39,7 +60,7 @@
 
 <a id="simulation"></a>
 
-## 3 · 仿真
+## 4 · 仿真
 
 遥操作，以及这些操作产出的数据。
 
@@ -53,7 +74,7 @@
 
 <a id="rl-and-vla"></a>
 
-## 4 · 强化学习与 VLA
+## 5 · 强化学习与 VLA
 
 VLA 训练从上面的 [SO-101 Lab 01](#simulation)（ACT / SmolVLA）和 [OpenArm 轨迹](#simulation) 进入。
 
@@ -66,7 +87,7 @@ VLA 训练从上面的 [SO-101 Lab 01](#simulation)（ACT / SmolVLA）和 [OpenA
 
 <a id="robots"></a>
 
-## 5 · 机器人
+## 6 · 机器人
 
 | 项目 | 做什么 | 验证于 |
 | --- | --- | --- |
@@ -77,7 +98,7 @@ VLA 训练从上面的 [SO-101 Lab 01](#simulation)（ACT / SmolVLA）和 [OpenA
 
 <a id="inference"></a>
 
-## 6 · 推理
+## 7 · 推理
 
 | 项目 | 做什么 | 验证于 |
 | --- | --- | --- |
@@ -86,13 +107,13 @@ VLA 训练从上面的 [SO-101 Lab 01](#simulation)（ACT / SmolVLA）和 [OpenA
 
 <a id="upstream"></a>
 
-## 7 · 上游 PR
+## 8 · 上游 PR
 
 送给其他项目、让它们能在 AMD GPU 上跑的 pull request。每条的 GitHub 状态记在 [上游页面](upstream/README.md)（英文）。
 
 <a id="earlier"></a>
 
-## 8 · 2024–2025
+## 9 · 2024–2025
 
 [History](history/README.zh.md) 保留更早的复现步骤：W7900 上的 LoRA / QLoRA、iGPU 780M 上的 Ollama、vLLM 容器、EchoMimic、CosyVoice、语音助手和 RAG。每条标了当时的 GPU 和 ROCm 版本。**2026-10 未复测。**
 

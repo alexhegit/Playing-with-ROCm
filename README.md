@@ -6,18 +6,39 @@ Open-source projects that run on AMD ROCm. This page is only the map: code stays
 
 | | Section | Open this if you want |
 | --- | --- | --- |
-| 1 | [By machine](#by-machine) | a short list for Strix Halo, MI300X, or a Radeon dGPU |
-| 2 | [Real2Sim](#real2sim) | scans, dynamic scenes, stereo depth |
-| 3 | [Simulation](#simulation) | teleoperation, datasets, MuJoCo |
-| 4 | [RL and VLA](#rl-and-vla) | a policy that grasps, walks, or tracks velocity |
-| 5 | [Robots](#robots) | a desktop robot that talks, sees, or takes a photo |
-| 6 | [Inference](#inference) | a HIP engine you can compile |
-| 7 | [Upstream PRs](upstream/README.md) | patches sent so other projects run on AMD GPUs |
-| 8 | [2024–2025](#earlier) | older guides, not retested in 2026-10 |
+| 1 | [TOP 3](#top3) | what just shipped |
+| 2 | [By machine](#by-machine) | a short list for Strix Halo, MI300X, or a Radeon dGPU |
+| 3 | [Real2Sim](#real2sim) | scans, dynamic scenes, stereo depth |
+| 4 | [Simulation](#simulation) | teleoperation, datasets, MuJoCo |
+| 5 | [RL and VLA](#rl-and-vla) | a policy that grasps, walks, or tracks velocity |
+| 6 | [Robots](#robots) | a desktop robot that talks, sees, or takes a photo |
+| 7 | [Inference](#inference) | a HIP engine you can compile |
+| 8 | [Upstream PRs](upstream/README.md) | patches sent so other projects run on AMD GPUs |
+| 9 | [2024–2025](#earlier) | older guides, not retested in 2026-10 |
+
+<a id="top3"></a>
+
+## 1 · TOP 3
+
+Three newest releases, newest first. A fourth one replaces the oldest. A LinkedIn post, when there is one, is linked on that item.
+
+**2026-10-07 · [h3-hip.c v0.15.0](https://github.com/alexhegit/h3-hip.c/releases/tag/v0.15.0).** FastH3 paths are opt-in and off by default: `--fasth3-lora` (dense 4-step LoRA), `--taeh3` (tiny video decoder), `--vsa` (sparse video attention). Prompt 1 at 1344×768, 5 seconds, one MI300X:
+
+| Path | Time |
+| --- | --- |
+| dense 50-step | 668 s |
+| FastH3 | 97 s |
+| VSA + TAEH3 | 62 s |
+
+FastH3 and VSA+TAEH3 are 4-step, not the published NVIDIA 50-step stack. At 62 s, one MI300X is faster than the published RTX 5090 full-opt cell (231 s) and the H100×4 baseline (81 s). Four H100s at full opt are still faster (23 s). gfx1151 and gfx90a were not re-timed for this tag. Ledger: [MI300X vs NVIDIA, 768p](https://github.com/alexhegit/h3-hip.c/blob/main/docs/perf-runs/MI300X_VS_NVIDIA_768P_2026-10-07.md).
+
+**2026-08-29 · [MicroDuck gait in UniLab](https://github.com/Motphys/UniLab/pull/1368).** Pollen Robotics' Hugging Face mini biped. Velocity task on MuJoCo, PPO and SAC. Merged. [LinkedIn](https://www.linkedin.com/posts/alexhegit_microduck-gait-rl-in-unilab-native-rocm-activity-7499461871222231040-HV_P): trained on a Radeon Pro W7900 with UniLab's native ROCm path.
+
+**2026-07-17 · [SO-101 SimStudio](https://github.com/rocPAI-Forge/so101-simstudio).** Teleop with a keyboard, Joy-Con, or leader arm, recorded as LeRobot v3.0. Collection release v0.1.2. Ubuntu 24.04 + ROCm, for a Ryzen AI laptop or mini PC. [LinkedIn](https://www.linkedin.com/posts/alexhegit_so-101-simstudio-is-open-source-starting-activity-7483870972219957249-9Gt2).
 
 <a id="by-machine"></a>
 
-## 1 · By machine
+## 2 · By machine
 
 | Machine | Start here |
 | --- | --- |
@@ -27,7 +48,7 @@ Open-source projects that run on AMD ROCm. This page is only the map: code stays
 
 <a id="real2sim"></a>
 
-## 2 · Real2Sim
+## 3 · Real2Sim
 
 Scans, video, and stereo, turned into something a simulator can use.
 
@@ -39,7 +60,7 @@ Scans, video, and stereo, turned into something a simulator can use.
 
 <a id="simulation"></a>
 
-## 3 · Simulation
+## 4 · Simulation
 
 Teleoperation and the data those runs produce.
 
@@ -53,7 +74,7 @@ Teleoperation and the data those runs produce.
 
 <a id="rl-and-vla"></a>
 
-## 4 · RL and VLA
+## 5 · RL and VLA
 
 VLA training starts from [SO-101 Lab 01](#simulation) (ACT / SmolVLA) and the [OpenArm trajectories](#simulation) above.
 
@@ -66,7 +87,7 @@ VLA training starts from [SO-101 Lab 01](#simulation) (ACT / SmolVLA) and the [O
 
 <a id="robots"></a>
 
-## 5 · Robots
+## 6 · Robots
 
 | Project | What | Verified on |
 | --- | --- | --- |
@@ -77,7 +98,7 @@ VLA training starts from [SO-101 Lab 01](#simulation) (ACT / SmolVLA) and the [O
 
 <a id="inference"></a>
 
-## 6 · Inference
+## 7 · Inference
 
 | Project | What | Verified on |
 | --- | --- | --- |
@@ -86,13 +107,13 @@ VLA training starts from [SO-101 Lab 01](#simulation) (ACT / SmolVLA) and the [O
 
 <a id="upstream"></a>
 
-## 7 · Upstream PRs
+## 8 · Upstream PRs
 
 Pull requests sent to other projects so they can run on AMD GPUs. The list, with each pull request's GitHub state, is on the [upstream page](upstream/README.md).
 
 <a id="earlier"></a>
 
-## 8 · 2024–2025
+## 9 · 2024–2025
 
 [History](history/README.md) keeps the older reproduction steps: LoRA / QLoRA on the W7900, Ollama on iGPU 780M, vLLM containers, EchoMimic, CosyVoice, the voice assistant, and RAG. Each entry records the GPU and ROCm version from that time. **Not retested in 2026-10.**
 
