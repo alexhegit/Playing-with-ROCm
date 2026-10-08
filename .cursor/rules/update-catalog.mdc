@@ -1,0 +1,10 @@
+---
+description: Keep the ROCm catalog in the agreed bilingual format when adding recent hands-on work
+alwaysApply: true
+---
+
+# Catalog updates
+
+Before editing this repo, follow `AGENTS.md`.
+
+This repo is a map, not the project code. Update `README.md` and `README.zh.md` together. Put third-party ROCm pull requests only in English `upstream/README.md`. Put older reproduction steps in `history/`, with a validation window and a not-retested month. Leave out unverified forks and anything that was never run.
