@@ -12,7 +12,8 @@ Open-source projects that run on AMD ROCm. This page is only the map: code stays
 | 4 | [RL and VLA](#rl-and-vla) | a policy that grasps, walks, or tracks velocity |
 | 5 | [Robots](#robots) | a desktop robot that talks, sees, or takes a photo |
 | 6 | [Inference](#inference) | a HIP engine you can compile |
-| 7 | [2024–2025](#earlier) | older guides, not retested in 2026-10 |
+| 7 | [Upstream PRs](upstream/README.md) | patches sent so other projects run on AMD GPUs |
+| 8 | [2024–2025](#earlier) | older guides, not retested in 2026-10 |
 
 <a id="by-machine"></a>
 
@@ -83,9 +84,15 @@ VLA training starts from [SO-101 Lab 01](#simulation) (ACT / SmolVLA) and the [O
 | [h3-hip.c](https://github.com/alexhegit/h3-hip.c) | HIP port of MiniMax-H3. One tree; set `HIP_ARCH` for the GPU. Actively updated. [v0.15.0](https://github.com/alexhegit/h3-hip.c): on one MI300X, a 1344×768, 5-second video is about 668 s dense 50-step, about 62 s with VSA+TAEH3. | gfx1151 (Strix Halo), gfx90a (MI210), gfx942 (MI300X). |
 | [dsh-plugin-h3-hip](https://github.com/alexhegit/dsh-plugin-h3-hip) | Connects `h3 --serve` to DeepSeek Harness. Needs h3-hip.c ≥ v0.12-exp. | — |
 
+<a id="upstream"></a>
+
+## 7 · Upstream PRs
+
+Pull requests sent to other projects so they can run on AMD GPUs. The list, with each pull request's GitHub state, is on the [upstream page](upstream/README.md).
+
 <a id="earlier"></a>
 
-## 7 · 2024–2025
+## 8 · 2024–2025
 
 [History](history/README.md) keeps the older reproduction steps: LoRA / QLoRA on the W7900, Ollama on iGPU 780M, vLLM containers, EchoMimic, CosyVoice, the voice assistant, and RAG. Each entry records the GPU and ROCm version from that time. **Not retested in 2026-10.**
 

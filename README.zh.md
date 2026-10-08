@@ -12,7 +12,8 @@
 | 4 | [强化学习与 VLA](#rl-and-vla) | 会抓、会走、会跟速度的策略 |
 | 5 | [机器人](#robots) | 能对话、能看、能拍照的桌面机器人 |
 | 6 | [推理](#inference) | 可以自己编译的 HIP 引擎 |
-| 7 | [2024–2025](#earlier) | 更早的教程，2026-10 未复测 |
+| 7 | [上游 PR](upstream/README.md) | 送给其他项目、让它们能在 AMD GPU 上跑的改动 |
+| 8 | [2024–2025](#earlier) | 更早的教程，2026-10 未复测 |
 
 <a id="by-machine"></a>
 
@@ -83,9 +84,15 @@ VLA 训练从上面的 [SO-101 Lab 01](#simulation)（ACT / SmolVLA）和 [OpenA
 | [h3-hip.c](https://github.com/alexhegit/h3-hip.c) | MiniMax-H3 的 HIP 移植。同一棵代码，用 `HIP_ARCH` 选择 GPU。持续更新。[v0.15.0](https://github.com/alexhegit/h3-hip.c)：单卡 MI300X、1344×768、5 秒视频，稠密 50 步约 668 秒，VSA+TAEH3 约 62 秒。 | gfx1151（Strix Halo）、gfx90a（MI210）、gfx942（MI300X）。 |
 | [dsh-plugin-h3-hip](https://github.com/alexhegit/dsh-plugin-h3-hip) | 把 `h3 --serve` 接到 DeepSeek Harness。需要 h3-hip.c ≥ v0.12-exp。 | — |
 
+<a id="upstream"></a>
+
+## 7 · 上游 PR
+
+送给其他项目、让它们能在 AMD GPU 上跑的 pull request。每条的 GitHub 状态记在 [上游页面](upstream/README.md)（英文）。
+
 <a id="earlier"></a>
 
-## 7 · 2024–2025
+## 8 · 2024–2025
 
 [History](history/README.zh.md) 保留更早的复现步骤：W7900 上的 LoRA / QLoRA、iGPU 780M 上的 Ollama、vLLM 容器、EchoMimic、CosyVoice、语音助手和 RAG。每条标了当时的 GPU 和 ROCm 版本。**2026-10 未复测。**
 
