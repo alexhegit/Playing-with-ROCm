@@ -15,7 +15,7 @@ Here I will guide you to modify it and run [orca/demo/llm_voice_assistant at mai
 ## Steps
 1. Setup Ollama with ROCm
 
-Refer to [Playing-with-ROCm/inference/LLM/Run_Ollama_with_AMD_iGPU780M-QuickStart.md at main · alexhegit/Playing-with-ROCm (github.com)](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/Run_Ollama_with_AMD_iGPU780M-QuickStart.md) 
+Refer to [Run Ollama with AMD iGPU 780M](../Run_Ollama_with_AMD_iGPU780M-QuickStart.md). 
 
 2. Setup [orca/demo/llm_voice_assistant at main · Picovoice/orca (github.com)](https://github.com/Picovoice/orca/tree/main/demo/llm_voice_assistant) 
 	- Clone the repo
@@ -28,7 +28,7 @@ Refer to [Playing-with-ROCm/inference/LLM/Run_Ollama_with_AMD_iGPU780M-QuickStar
 	 cd [orca repo root dir]
 	 git am 0001-deploy-LLM-local-with-Ollama.patch
 	 ```
-   This patch file is provided at [here](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/LLM_Voice_Assistant/0001-deploy-LLM-local-with-Ollama.patch).
+   This patch file is provided at [0001-deploy-LLM-local-with-Ollama.patch](./0001-deploy-LLM-local-with-Ollama.patch).
 
 5. Request AccessKey from https://picovoice.ai/ 
 

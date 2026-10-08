@@ -1,134 +1,125 @@
-# Playing-with-ROCm
+# Playing with ROCm
 
-Here to show my experience about playing with ROCm with runable code, step-by-step tutorial to help you reproduce what I have did. If you have iGPU or dGPU of AMD, you may try Machine Learning with them. 
+Open-source projects that actually run on AMD ROCm. This page is the map. Code stays in each project repo. Longer write-ups stay in [rocPAI-Forge tech notes](https://github.com/rocPAI-Forge/tech-blog-pub) and on [rocpai-forge.github.io](https://rocpai-forge.github.io/).
 
-**NOTICE** : For more easier tracking my update, I use 🆕 and 🔥 to flag the new hot topics.
+在 AMD ROCm 上亲手跑通的开源项目目录。这里只做入口：一条项目一句说明、验证过的机器、以及仓库或笔记链接。
 
-## Topics
+2024–2025 的微调、vLLM 和数字人实践在 [History](history/README.md)。那些步骤 **2026-10 没有复测**。
 
-### Pysical AI & Robotics
+## 按机器往下看
 
-- [Create Virtual Reachy MINI Conversaion Robot with Mujoco at local](https://github.com/alexhegit/ReachyMiniChat) 🆕
-- [ROCm Robotics RL Lab](https://github.com/alexhegit/ROCm_Robotics_RL_Lab) - 🆕🔥, I create this new repo with a sim & RL lab - lift cube with Panda Arm robot in Simulation. 
+| 机器 | 适合先打开 |
+| --- | --- |
+| Ryzen AI / Strix Halo（gfx1151，含 Radeon 8060S） | [FoundationStereo-hip.c](https://github.com/alexhegit/FoundationStereo-hip.c)、[h3-hip.c](https://github.com/alexhegit/h3-hip.c)、[SO-101 SimStudio](https://github.com/rocPAI-Forge/so101-simstudio)、[ROCm Robotics RL Lab](https://github.com/alexhegit/ROCm_Robotics_RL_Lab)、[Reachy Mini Chat](https://github.com/alexhegit/ReachyMiniChat) |
+| Instinct MI300X | [h3-hip.c](https://github.com/alexhegit/h3-hip.c)、OpenArm 轨迹与抓取、[SO-101 Lab 01](https://github.com/rocPAI-Forge/tech-blog-pub/tree/main/PhysicalAI/so101-simstudio-lab01-pnp)、[4DGS](https://github.com/rocPAI-Forge/tech-blog-pub/tree/main/PhysicalAI/amd-4dgs-series-01)、[MicroDuck 教程](https://github.com/rocPAI-Forge/microduck_rl_tutorial) |
+| Radeon 独显 | 4DGS 观看端（Vulkan 渲染、VA-API 编码、WebRTC） |
 
-### Training
+组织主线是一条闭环：真机采集、仿真、强化学习 / VLA、再部署回真机，计算放在 ROCm 上。全景图在 [技术全景](https://github.com/rocPAI-Forge/rocPAI-Forge.github.io/blob/main/content/overview.zh.md)。
 
-#### Finetuning
+## Real2Sim 与三维场景
 
-- [LoRA with Radeon](./training/W7900_LoRA_Demo.ipynb)
-- [QLoRA with Radeon](./training/W7900_QLoRA_Demo.ipynb)
+**[Scan2Sim](https://github.com/rocPAI-Forge/Scan2Sim)** — 把扫描得到的 OBJ 收成带碰撞体、质量和惯量的 MuJoCo 资产。
 
-### Inference
+- 验证：网格处理管线，不依赖 GPU 训练
+- 状态：仓库可运行
 
-- [Deploy Deepseek-R1 in one GPU -AMD Instinct™ MI300X](https://medium.com/@alexhe.amd/deploy-deepseek-r1-in-one-gpu-amd-instinct-mi300x-7a9abeb85f78) 🔥
-- [Deploy Llama 3.2 Vision quickly on AMD ROCm with Ollama](https://medium.com/@alexhe.amd/deploy-llama-3-2-vision-quickly-on-amd-rocm-with-ollama-9a23e9a86fea)
-- [Deploy vLLM service with Kubernetes over AMD ROCm GPU](https://medium.com/@alexhe.amd/deploy-vllm-service-with-kubernetes-over-amd-rocm-gpu-27cd5321271a)
-- [Deploy LLM with Radeon iGPU 780M](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/Run%20Ollama%20with%20AMD%20iGPU%20780M-QuickStart.pdf)
-- [Examples of using vLLM with ROCm](https://github.com/alexhegit/Playing-with-ROCm/blob/main/tools/vllm_gadget/README.md)  🆕 🔥
-    - Help scripts to fast use vLLM with ROCm
-    - Example: using docker compose to run multiple containers of vllm serve. e.g. gpu=0,1 for container-1 and gpu=6,7 for container-2.
- 
-### MLOPS with ROCm
+**[单目视频 → 4DGS](https://github.com/rocPAI-Forge/tech-blog-pub/tree/main/PhysicalAI/amd-4dgs-series-01)** — 用单目视频补出多视角，再建可换视角的动态高斯场景。Phi Media Lab 与 rocPAI-Lab 一起做的。
 
-- vLLM
-    - [Neural Magic vLLM, nm-vllm](https://docs.neuralmagic.com)
-    - [AIBrix](https://aibrix.readthedocs.io/latest/index.html)
-    - [KubeAI](https://github.com/substratusai/kubeai) : AI Inferencing Operator
-    - [vLLM Production Stack](https://docs.vllm.ai/en/latest/deployment/integrations/production-stack.html)
+- 验证：生成与重建在 Instinct MI300X + ROCm；观看端在 Radeon 上用 Vulkan + VA-API + WebRTC，输出 1280×720
+- 动手：[笔记](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/amd-4dgs-series-01/README.md)
+- 状态：一条端到端路径已跑通（121 帧 → 24 路观测 → 3 万步高斯更新）
 
-### Application/Demo
+**[FoundationStereo-hip.c](https://github.com/alexhegit/FoundationStereo-hip.c)** — FoundationStereo 的 HIP 移植，面向 Strix Halo。
 
-- [RAG_LLM_QnA_Assistant](https://github.com/alexhegit/RAG_LLM_QnA_Assistant), Step-by-step tutorial repo project to setup RAG Apps with ROCm
-- [Ask4ROCm_Chatbot](https://github.com/alexhegit/Ask4ROCm_Chatbot), An chatbot app drive by RAG solution.
-- [LLM_Voice_Assistant](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/LLM_Voice_Assistant/Run%20Picovoice%20llm%20voice%20assistant%20with%20ROCm.md) , Use STT/TTS model from Picovoice.
-- [Easy-Wav2Lip-ROCm](https://github.com/alexhegit/Easy-Wav2Lip-ROCm), Easy run Wav2Lip with ROCm over AMD GPU. Way2Lip is a project of Generalized Lip Sync Models
-- [Run EchoMimic with ROCm](./Digital-Human/EchoMimic.md) EchoMimic: Lifelike Audio-Driven Portrait Animations through Editable Landmark Conditioning
-- [Run LLama-3.2-vision with ROCm](https://medium.com/@alexhe.amd/deploy-llama-3-2-vision-quickly-on-amd-rocm-with-ollama-9a23e9a86fea) Ollama+Llama-3.2-vision+ROCm
-- [Deploy vLLM service with Kubernetes over AMD ROCm GPU](https://medium.com/@alexhe.amd/deploy-vllm-service-with-kubernetes-over-amd-rocm-gpu-27cd5321271a) , Turoial with sample codes.
-- [Play Qwen2.5–Omni with AMD GPU](https://medium.com/@alexhe.amd/play-qwen2-5-omni-with-amd-gpu-9d80de58589a) 🆕 🔥
-  
--------------------------------------------------------------------
+- 验证：gfx1151，ROCm 7.2。2448×2048、12 iter，官方 PyTorch ROCm 约 426 秒，HIP 均值约 5.0 秒（[v0.1.0](https://github.com/alexhegit/FoundationStereo-hip.c/releases/tag/v0.1.0)）
+- 状态：已发布
 
-## Projects work over ROCm
+## 仿真、遥操作与数据
 
-These projects may not offical announce to support ROCm GPU. But they work fine base on my verification.
-| Name    | URL     | Category | Hands on |
-| -------- | ------- | ------- | ------- |
-| CLM-4-Voice | https://github.com/THUDM/GLM-4-Voice | Conversation AI |  |
-| EchoMimic | https://github.com/BadToBest/EchoMimic | Digital Human GenAI   | [Run EchoMimic with ROCm](./Digital-Human/EchoMimic.md) |
-| Easy-Wav2Lip | https://github.com/anothermartz/Easy-Wav2Lip | Digital Human GenAI | [Easy-Wav2Lip-ROCm](https://github.com/alexhegit/Easy-Wav2Lip-ROCm) |
-| GOT-OCR2 | https://github.com/Ucas-HaoranWei/GOT-OCR2.0 | end2end OCR |
-| Moshi  | https://github.com/kyutai-labs/moshi  | Conversation AI |  |
-| mini-omni | https://github.com/gpt-omni/mini-omni   | Conversation AI  |  |
-| mini-omni2 | https://github.com/gpt-omni/mini-omni2   | Conversation AI  |  |
-| Picovoice/orca    | https://github.com/Picovoice/orca   | Conversation AI | [LLM_Voice_Assistant](https://github.com/alexhegit/Playing-with-ROCm/blob/main/inference/LLM/LLM_Voice_Assistant/Run%20Picovoice%20llm%20voice%20assistant%20with%20ROCm.md) |
-| Retrieval-based-Voice-Conversion-WebUI | https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI.git | Easily train a good VC model with voice data <= 10 mins!   |   |
-| Freeze-Omni 🆕 🔥| https://github.com/VITA-MLLM/Freeze-Omni | A Smart and Low Latency Speech-to-speech Dialogue Model with Frozen LLM | Realtime on Radeon W7900, realtime with good response, feel good than Moshi, mini-omni2 |
-| Step-Auido 🆕 🔥| https://github.com/stepfun-ai/Step-Audio | Convseration AI | Too big model, not real time |
-| Step-Video-T2V 🆕 🔥| https://github.com/stepfun-ai/Step-Video-T2V | Video GenAI | Run with 1xMI300X |
-| UI-TARS | https://github.com/bytedance/UI-TARS | Automated GUI Interaction with Native Agentsfrom ByteDance  |  |
-| Qwen2.5-Omni 🆕 🔥|https://github.com/QwenLM/Qwen2.5-Omni | end-to-end multimodal model in the Qwen serie | | 
-| CosyVoice| https://github.com/FunAudioLLM/CosyVoice | TTS LLM | [tutorial](https://medium.com/@alexhe.amd/play-cosyvoice-on-amd-rocm-gpu-459c942f7214) , ![conda-env](./conda-env/cosyvoice-env.yml) |
+**[SO-101 SimStudio](https://github.com/rocPAI-Forge/so101-simstudio)** — SO-101、MuJoCo、LeRobot v3.0。键盘、Joy-Con 或主臂遥操作，录成专家轨迹。
 
+- 验证：Ubuntu 24.04 + ROCm。文档按 Ryzen AI 笔记本或 mini PC 来写
+- 动手：[项目介绍](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/so101-simstudio/README.md) · [详解](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/so101-simstudio/README-details.md)
+- 状态：v0.1.2 采集。安装路径只写了 Ubuntu 24.04 + ROCm
 
+**[SO-101 Lab 01 抓取放置](https://github.com/rocPAI-Forge/so101-simstudio)** — 同一套仿真示范，接上 ACT / SmolVLA 训练，再在 MuJoCo 里闭环评估。
 
-### Wish List
+- 验证：MI300X 上训过 50K 步检查点
+- 动手：[笔记](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/so101-simstudio-lab01-pnp/README.md) · [详解](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/so101-simstudio-lab01-pnp/README-details.md)
+- 状态：v0.1.3
 
-| Name    | URL     | Category | Hands on |
-| -------- | ------- | ------- | ------- |
-| hertz-dev |https://github.com/Standard-Intelligence/hertz-dev | Conversation AI |
-| Freeze-Omni | https://github.com/VITA-MLLM/Freeze-Omni | Conversation AI |  |
-| LLaMA-Omni| https://github.com/ictnlp/LLaMA-Omni | Conversation AI |  |
-| ichigo Llama 3.1 |https://github.com/homebrewltd/ichigo| Conversation AI||
-| ichigo-demo | https://github.com/homebrewltd/ichigo-demo/tree/docker |||
-| Exo | https://github.com/exo-explore/exo | heterogeneous distribute inference ||
-| Perpleica | https://github.com/ItzCrazyKns/Perplexica | AI Search Engine| issue |
-| MiniPerplx| https://github.com/zaidmukaddam/miniperplx | A minimalistic AI-powered search engine | |
-| ollama-helm |https://github.com/otwld/ollama-helm|||
-| OpenHands |https://github.com/All-Hands-AI/OpenHands| a platform for software development agents powered by AI ||
-| HayStack| https://github.com/deepset-ai/haystack | end-to-end LLM framework that allows you to build applications powered by LLMs ||
-| Bailing |https://github.com/ictnlp/BayLing|||
-| Bailing| https://github.com/wwbin2017/bailing|||
-| BabelDuck |https://github.com/Orenoid/BabelDuck|Beginner-friendly AI conversation practice application||
-| KubeAI| https://github.com/substratusai/kubeai | deploy and manage AI models on Kubernetes ||
-| DSPy | https://dspy.ai | the framework for programming ||
-| KServe | https://kserve.github.io/website/latest/ |||
-| Camel-ai/OWL | https://github.com/camel-ai/owl |||
-| VITA| https://github.com/VITA-MLLM/VITA | VITA-1.5: Towards GPT-4o Level Real-Time Vision and Speech Interaction ||
-| DiffRhythm | https://github.com/ASLP-lab/DiffRhythm | End-to-End Full-Length Song Generation with Latent Diffusion | |
-| Open-Sora | https://github.com/hpcaitech/Open-Sora | | |
-| Real-Time-Voice-Cloning |https://github.com/CorentinJ/Real-Time-Voice-Cloning| | |
-| OpenVoice | https://github.com/myshell-ai/OpenVoice |||
-| KrilinAI |https://github.com/krillinai/KrillinAI|||
-| RealtimeVoiceChat | https://github.com/KoljaB/RealtimeVoiceChat |||
-| pipecat| https://github.com/pipecat-ai/pipecat |||
+**[OpenArm 专家轨迹](https://github.com/alexhegit/openarm_mp_labs)** — 用运动规划在 MuJoCo 里批量生成 OpenArm 抓放轨迹，给后面的 VLA 训练当示范数据。抓取位姿可以是标定的顶视抓取，也可以用 GraspGenX 在 ROCm 上合成的 6-DoF 抓取。
 
+- 验证：Instinct MI300X，ROCm 7.2（容器内 torch 2.7.1+rocm7.2）。轨迹回放本身在 CPU
+- 动手：[笔记](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/openarm-traj-gen-for-vla/README.md) · [详解](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/openarm-traj-gen-for-vla/README-details.md)
+- 状态：数据引擎已跑通
 
+**[RoboSimLab](https://github.com/alexhegit/RoboSimLab)** — SO-101 的 MuJoCo 场景，并导出 LeRobot 3.0 轨迹。
 
-### Tracing
-- [Awesome-Multimodel-LLM](https://github.com/BradyFU/Awesome-Multimodal-Large-Language-Models)
-- [Utiliy scripts of modal-labs/llm-serving](https://github.com/modal-labs/modal-examples/tree/main/06_gpu_and_ml/llm-serving)
+- 验证：目标平台是 Linux + PyTorch + ROCm
+- 状态：基础场景和脚本化 episode 导出已完成；IK、抓放和真机还在路线上
 
-### Misc
+**[OpenArm Labs Hub](https://github.com/alexhegit/openarm_labs_hub)** — OpenArm 仿真、强化学习、模仿学习和 ROS 的笔记中枢。实现代码在各个仓库里，这里记仓库地图和踩坑。
 
-#### MCP 
-- [write-my-first-mcp-server](https://medium.com/@alexhe.amd/write-my-first-mcp-server-e67a747aacc6)
-- [write-my-first-mcp-client](https://medium.com/@alexhe.amd/my-first-mcp-client-36e4a222f31b)
+## 学习：强化学习与 VLA
 
+**[OpenArm 抓取强化学习](https://github.com/rocPAI-Forge/tech-blog-pub/tree/main/PhysicalAI/openarm-rl-grasp)** — 抓方块任务。策略练出了一种奖励里没有写明的抓法。物理仿真在 CPU 上的 MuJoCo，策略学习在 ROCm 上，训练栈是 [UniLab](https://github.com/Motphys/UniLab)。
 
-### 3rd-stuff
-- [Tutorial: vLLM deploy](https://ploomber.io/blog/vllm-deploy/)
-- Summary: Awesome-Agent-Framework
-      - https://github.com/AgentSpaceAI/Awesome-Agent-Framework
-      - https://github.com/kyrolabs/awesome-agents
- 
--------------------------------------------------------------------
+- 验证：Instinct MI300X / MI210 + ROCm
+- 动手：[笔记](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/openarm-rl-grasp/README.md) · [详解](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/openarm-rl-grasp/README-details.md)
+- 作者：rocPAI-Lab（Alex He, David Li, Andy Luo）
+
+**[MicroDuck 速度跟踪](https://github.com/rocPAI-Forge/microduck_rl_tutorial)** — 全向小车的 PPO 实验课：从奖励设计练到评估视频，再用键盘驱动单机策略。任务定义在 [microduck_rl_unilab](https://github.com/rocPAI-Forge/microduck_rl_unilab)。
+
+- 验证：教程里 500×300 的训练计时写的是 MI300X 上约 4 分钟
+- 状态：中英笔记本
+
+**[Kudada 双足步态](https://github.com/rocPAI-Forge/kudada_rl_unilab)** — 10 自由度双足在平地上做速度跟踪。FastSAC，四种已验收步态：走、蹲走、侧向走、踏步恢复。
+
+- 验证：UniLab + MuJoCo
+- 状态：仓库带评估视频
+
+**[ROCm Robotics RL Lab](https://github.com/alexhegit/ROCm_Robotics_RL_Lab)** — robosuite 里的 Panda 抬方块，SAC / PPO，在笔记本上把仿真渲染和 PyTorch 都跑在核显上。
+
+- 验证：Ryzen AI Max+ 395，Radeon 8060S，PyTorch ROCm 7.1
+- 状态：训练、评估和扫参脚本可用
+
+VLA 训练入口见上面的 SO-101 Lab 01（ACT / SmolVLA）和 OpenArm 专家轨迹。
+
+## 具身交互
+
+**[Reachy Mini Chat](https://github.com/alexhegit/ReachyMiniChat)** — Reachy Mini 的仿真或真机对话：语音识别、Ollama、TTS，情绪动作和口型。可以完全离线。
+
+- 验证：开发机是 Ryzen AI Max+ 395 + Ubuntu 24.04；也在带 Radeon 的 Ubuntu 上跑过
+- 状态：`emo_v1` 到 `emo_v8`，含 Piper 离线 TTS
+
+**[ReachyBuddy](https://github.com/alexhegit/ReachyBuddy)** — 同一台 Reachy Mini 上的几种模式：语音拍照、用 Ollama 视觉模型巡视、对话，以及带工具调用的 Agent。
+
+**[ReachyClaw](https://github.com/alexhegit/ReachyClaw)** — Reachy Mini 接 OpenClaw 做对话和情绪动作。语言模型走 OpenClaw 的 API，机器人侧是 MuJoCo 仿真或真机。
+
+**[VLM Demo](https://github.com/alexhegit/vlm-demo-rocm)** — 浏览器里打开摄像头，用 Qwen2.5-VL-3B-Instruct 看图回答。
+
+- 验证：ROCm GPU
+- 状态：Web demo（2025-11）
+
+## 推理引擎
+
+**[h3-hip.c](https://github.com/alexhegit/h3-hip.c)** — MiniMax-H3 的 HIP 移植。同一棵代码用 `HIP_ARCH` 编给不同卡。
+
+- 验证：Strix Halo gfx1151、MI210 gfx90a、MI300X gfx942。单卡 MI300X、1344×768、5 秒视频：稠密 50 步约 668 秒，VSA+TAEH3 约 62 秒（[v0.15.0](https://github.com/alexhegit/h3-hip.c)）
+- 状态：持续更新
+
+**[dsh-plugin-h3-hip](https://github.com/alexhegit/dsh-plugin-h3-hip)** — 把 `h3 --serve` 接到 DeepSeek Harness。需要 h3-hip.c ≥ v0.12-exp。
+
+## 更早的实践
+
+[History](history/README.md) 保留 2024–2025 年写下来的复现步骤：W7900 上的 LoRA / QLoRA、iGPU 780M 上的 Ollama、vLLM 容器、EchoMimic、CosyVoice、语音助手和 RAG。每条标了当时的 GPU 和 ROCm 版本。**2026-10 未复测。**
 
 ```
-@misc{ Playing with ROCm,
+@misc{Playing with ROCm,
   author = {He Ye (Alex)},
-  title = {Playing with ROCm: share my experience and practice},
-  howpublished = {\url{https://alexhegit.github.io/}},
-  year = {2024--}
+  title = {Playing with ROCm},
+  howpublished = {\url{https://github.com/alexhegit/Playing-with-ROCm}},
+  year = {2024--2026}
 }
 ```
