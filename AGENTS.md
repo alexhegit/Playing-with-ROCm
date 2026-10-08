@@ -2,7 +2,7 @@
 
 This repo is a map of open-source projects that were actually run on AMD ROCm. Code stays in each project repo. Long write-ups stay in [tech-blog-pub](https://github.com/rocPAI-Forge/tech-blog-pub) and on [rocpai-forge.github.io](https://rocpai-forge.github.io/).
 
-English `README.md` is the GitHub default. `README.zh.md` is the twin. Edit both in the same change, same section order, same anchors.
+English `README.md` is the GitHub default. `README.zh.md` is the twin. Edit both in the same change, same section order, same anchors. The title in both READMEs is the ROCm wordmark: `assets/logo.svg` on a light background and `assets/logo-dark.svg` on a dark one. The O is a play button. Do not spell the name again beside it.
 
 ## Where to look
 

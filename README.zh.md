@@ -1,4 +1,4 @@
-# Playing with ROCm
+# <picture><source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg"><img src="assets/logo.svg" height="52" alt="Playing with ROCm"></picture>
 
 [English](README.md)
 
