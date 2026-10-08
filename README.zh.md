@@ -32,9 +32,15 @@
 
 FastH3 和 VSA+TAEH3 是 4 步，不是 NVIDIA 公布的 50 步方案。62 秒的单卡 MI300X 快过已公布的 RTX 5090 全优化（231 秒）和 4 卡 H100 基线（81 秒）。4 卡 H100 全优化仍然更快（23 秒）。这一版没有重测 gfx1151 和 gfx90a。账本：[MI300X 对比 NVIDIA，768p](https://github.com/alexhegit/h3-hip.c/blob/main/docs/perf-runs/MI300X_VS_NVIDIA_768P_2026-10-07.md)。[LinkedIn](https://www.linkedin.com/posts/alexhegit_amd-mi300x-rocm-activity-7513883671502974976-uY3n)。
 
+<img src="assets/top3/h3-hip-v0.15.0.gif" width="320" alt="上为 FastH3 4 步，下为 FastH3 + TAEH3，单卡 MI300X">
+
 **2026-08-29 · [UniLab 里的 MicroDuck 步态](https://github.com/Motphys/UniLab/pull/1368)。** Pollen Robotics 的 Hugging Face 小型双足。MuJoCo 上的速度任务，PPO 和 SAC。已合并。[LinkedIn](https://www.linkedin.com/posts/alexhegit_microduck-gait-rl-in-unilab-native-rocm-activity-7499461871222231040-HV_P)：在 Radeon Pro W7900 上，用 UniLab 自带的 ROCm 路径训练。
 
+<img src="assets/top3/microduck-gait.gif" width="280" alt="MicroDuck 侧面步态">
+
 **2026-07-17 · [SO-101 SimStudio](https://github.com/rocPAI-Forge/so101-simstudio)。** 键盘、Joy-Con 或主臂遥操作，录成 LeRobot v3.0。采集版 v0.1.2。Ubuntu 24.04 + ROCm，面向 Ryzen AI 笔记本或 mini PC。[LinkedIn](https://www.linkedin.com/posts/alexhegit_so-101-simstudio-is-open-source-starting-activity-7483870972219957249-9Gt2)。
+
+<img src="assets/top3/so101-simstudio.gif" width="320" alt="SO-101 SimStudio 键盘遥操作">
 
 <a id="by-machine"></a>
 

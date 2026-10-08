@@ -32,9 +32,15 @@ Three newest releases, newest first. A fourth one replaces the oldest. A LinkedI
 
 FastH3 and VSA+TAEH3 are 4-step, not the published NVIDIA 50-step stack. At 62 s, one MI300X is faster than the published RTX 5090 full-opt cell (231 s) and the H100×4 baseline (81 s). Four H100s at full opt are still faster (23 s). gfx1151 and gfx90a were not re-timed for this tag. Ledger: [MI300X vs NVIDIA, 768p](https://github.com/alexhegit/h3-hip.c/blob/main/docs/perf-runs/MI300X_VS_NVIDIA_768P_2026-10-07.md). [LinkedIn](https://www.linkedin.com/posts/alexhegit_amd-mi300x-rocm-activity-7513883671502974976-uY3n).
 
+<img src="assets/top3/h3-hip-v0.15.0.gif" width="320" alt="FastH3 4-step above, FastH3 + TAEH3 below, one MI300X">
+
 **2026-08-29 · [MicroDuck gait in UniLab](https://github.com/Motphys/UniLab/pull/1368).** Pollen Robotics' Hugging Face mini biped. Velocity task on MuJoCo, PPO and SAC. Merged. [LinkedIn](https://www.linkedin.com/posts/alexhegit_microduck-gait-rl-in-unilab-native-rocm-activity-7499461871222231040-HV_P): trained on a Radeon Pro W7900 with UniLab's native ROCm path.
 
+<img src="assets/top3/microduck-gait.gif" width="280" alt="MicroDuck side-view gait">
+
 **2026-07-17 · [SO-101 SimStudio](https://github.com/rocPAI-Forge/so101-simstudio).** Teleop with a keyboard, Joy-Con, or leader arm, recorded as LeRobot v3.0. Collection release v0.1.2. Ubuntu 24.04 + ROCm, for a Ryzen AI laptop or mini PC. [LinkedIn](https://www.linkedin.com/posts/alexhegit_so-101-simstudio-is-open-source-starting-activity-7483870972219957249-9Gt2).
+
+<img src="assets/top3/so101-simstudio.gif" width="320" alt="Keyboard teleop in SO-101 SimStudio">
 
 <a id="by-machine"></a>
 
