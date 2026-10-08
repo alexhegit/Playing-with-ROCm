@@ -1,119 +1,121 @@
 # Playing with ROCm
 
-Open-source projects that actually run on AMD ROCm. This page is the map. Code stays in each project repo. Longer write-ups stay in [rocPAI-Forge tech notes](https://github.com/rocPAI-Forge/tech-blog-pub) and on [rocpai-forge.github.io](https://rocpai-forge.github.io/).
+[中文](README.zh.md)
 
-在 AMD ROCm 上亲手跑通的开源项目目录。这里只做入口：一条项目一句说明、验证过的机器、以及仓库或笔记链接。
+Open-source projects that actually run on AMD ROCm. This page is the map. Code stays in each project repo. Longer write-ups stay in the [rocPAI-Forge tech notes](https://github.com/rocPAI-Forge/tech-blog-pub) and on [rocpai-forge.github.io](https://rocpai-forge.github.io/).
 
-2024–2025 的微调、vLLM 和数字人实践在 [History](history/README.md)。那些步骤 **2026-10 没有复测**。
+Each entry has one sentence, the machine it was verified on, and a link to the repo or the note.
 
-## 按机器往下看
+The 2024–2025 fine-tuning, vLLM, and digital-human work is in [History](history/README.md). Those steps were **not retested in 2026-10**.
 
-| 机器 | 适合先打开 |
+## Start from your machine
+
+| Machine | Open these first |
 | --- | --- |
-| Ryzen AI / Strix Halo（gfx1151，含 Radeon 8060S） | [FoundationStereo-hip.c](https://github.com/alexhegit/FoundationStereo-hip.c)、[h3-hip.c](https://github.com/alexhegit/h3-hip.c)、[SO-101 SimStudio](https://github.com/rocPAI-Forge/so101-simstudio)、[ROCm Robotics RL Lab](https://github.com/alexhegit/ROCm_Robotics_RL_Lab)、[Reachy Mini Chat](https://github.com/alexhegit/ReachyMiniChat) |
-| Instinct MI300X | [h3-hip.c](https://github.com/alexhegit/h3-hip.c)、OpenArm 轨迹与抓取、[SO-101 Lab 01](https://github.com/rocPAI-Forge/tech-blog-pub/tree/main/PhysicalAI/so101-simstudio-lab01-pnp)、[4DGS](https://github.com/rocPAI-Forge/tech-blog-pub/tree/main/PhysicalAI/amd-4dgs-series-01)、[MicroDuck 教程](https://github.com/rocPAI-Forge/microduck_rl_tutorial) |
-| Radeon 独显 | 4DGS 观看端（Vulkan 渲染、VA-API 编码、WebRTC） |
+| Ryzen AI / Strix Halo (gfx1151, including Radeon 8060S) | [FoundationStereo-hip.c](https://github.com/alexhegit/FoundationStereo-hip.c), [h3-hip.c](https://github.com/alexhegit/h3-hip.c), [SO-101 SimStudio](https://github.com/rocPAI-Forge/so101-simstudio), [ROCm Robotics RL Lab](https://github.com/alexhegit/ROCm_Robotics_RL_Lab), [Reachy Mini Chat](https://github.com/alexhegit/ReachyMiniChat) |
+| Instinct MI300X | [h3-hip.c](https://github.com/alexhegit/h3-hip.c), OpenArm trajectories and grasp RL, [SO-101 Lab 01](https://github.com/rocPAI-Forge/tech-blog-pub/tree/main/PhysicalAI/so101-simstudio-lab01-pnp), [4DGS](https://github.com/rocPAI-Forge/tech-blog-pub/tree/main/PhysicalAI/amd-4dgs-series-01), [MicroDuck tutorial](https://github.com/rocPAI-Forge/microduck_rl_tutorial) |
+| Radeon dGPU | 4DGS viewer (Vulkan render, VA-API encode, WebRTC) |
 
-组织主线是一条闭环：真机采集、仿真、强化学习 / VLA、再部署回真机，计算放在 ROCm 上。全景图在 [技术全景](https://github.com/rocPAI-Forge/rocPAI-Forge.github.io/blob/main/content/overview.zh.md)。
+The org line of work is one loop: capture on a real robot, simulate, train with RL or a VLA, then deploy back to the robot, with the compute on ROCm. The diagram is on the [overview](https://github.com/rocPAI-Forge/rocPAI-Forge.github.io/blob/main/content/overview.en.md).
 
-## Real2Sim 与三维场景
+## Real2Sim and 3D scenes
 
-**[Scan2Sim](https://github.com/rocPAI-Forge/Scan2Sim)** — 把扫描得到的 OBJ 收成带碰撞体、质量和惯量的 MuJoCo 资产。
+**[Scan2Sim](https://github.com/rocPAI-Forge/Scan2Sim)** — Turns a scanned OBJ into a MuJoCo asset with a collision mesh, mass, and inertia.
 
-- 验证：网格处理管线，不依赖 GPU 训练
-- 状态：仓库可运行
+- Verified: mesh pipeline, no GPU training
+- Status: repo runs
 
-**[单目视频 → 4DGS](https://github.com/rocPAI-Forge/tech-blog-pub/tree/main/PhysicalAI/amd-4dgs-series-01)** — 用单目视频补出多视角，再建可换视角的动态高斯场景。Phi Media Lab 与 rocPAI-Lab 一起做的。
+**[Monocular video to 4DGS](https://github.com/rocPAI-Forge/tech-blog-pub/tree/main/PhysicalAI/amd-4dgs-series-01)** — Builds extra viewpoints from one video, then a dynamic Gaussian scene you can re-render from new angles. Joint work by Phi Media Lab and rocPAI-Lab.
 
-- 验证：生成与重建在 Instinct MI300X + ROCm；观看端在 Radeon 上用 Vulkan + VA-API + WebRTC，输出 1280×720
-- 动手：[笔记](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/amd-4dgs-series-01/README.md)
-- 状态：一条端到端路径已跑通（121 帧 → 24 路观测 → 3 万步高斯更新）
+- Verified: generation and reconstruction on Instinct MI300X + ROCm; the viewer runs on Radeon with Vulkan + VA-API + WebRTC at 1280×720
+- Try it: [note](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/amd-4dgs-series-01/README.md)
+- Status: one end-to-end path has been run (121 frames → 24 viewpoint streams → 30,000 Gaussian updates)
 
-**[FoundationStereo-hip.c](https://github.com/alexhegit/FoundationStereo-hip.c)** — FoundationStereo 的 HIP 移植，面向 Strix Halo。
+**[FoundationStereo-hip.c](https://github.com/alexhegit/FoundationStereo-hip.c)** — HIP port of FoundationStereo for Strix Halo.
 
-- 验证：gfx1151，ROCm 7.2。2448×2048、12 iter，官方 PyTorch ROCm 约 426 秒，HIP 均值约 5.0 秒（[v0.1.0](https://github.com/alexhegit/FoundationStereo-hip.c/releases/tag/v0.1.0)）
-- 状态：已发布
+- Verified: gfx1151, ROCm 7.2. At 2448×2048 and 12 iterations, official PyTorch ROCm takes about 426 s; the HIP mean is about 5.0 s ([v0.1.0](https://github.com/alexhegit/FoundationStereo-hip.c/releases/tag/v0.1.0))
+- Status: released
 
-## 仿真、遥操作与数据
+## Simulation, teleoperation, and data
 
-**[SO-101 SimStudio](https://github.com/rocPAI-Forge/so101-simstudio)** — SO-101、MuJoCo、LeRobot v3.0。键盘、Joy-Con 或主臂遥操作，录成专家轨迹。
+**[SO-101 SimStudio](https://github.com/rocPAI-Forge/so101-simstudio)** — SO-101, MuJoCo, and LeRobot v3.0. Teleoperate with a keyboard, Joy-Con, or leader arm and record expert trajectories.
 
-- 验证：Ubuntu 24.04 + ROCm。文档按 Ryzen AI 笔记本或 mini PC 来写
-- 动手：[项目介绍](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/so101-simstudio/README.md) · [详解](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/so101-simstudio/README-details.md)
-- 状态：v0.1.2 采集。安装路径只写了 Ubuntu 24.04 + ROCm
+- Verified: Ubuntu 24.04 + ROCm. The docs are written for a Ryzen AI laptop or mini PC
+- Try it: [intro](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/so101-simstudio/README.md) · [deep dive](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/so101-simstudio/README-details.md)
+- Status: v0.1.2 for collection. The install path covers Ubuntu 24.04 + ROCm
 
-**[SO-101 Lab 01 抓取放置](https://github.com/rocPAI-Forge/so101-simstudio)** — 同一套仿真示范，接上 ACT / SmolVLA 训练，再在 MuJoCo 里闭环评估。
+**[SO-101 Lab 01 pick-and-place](https://github.com/rocPAI-Forge/so101-simstudio)** — The same sim demonstrations, then ACT / SmolVLA training, then closed-loop eval in MuJoCo.
 
-- 验证：MI300X 上训过 50K 步检查点
-- 动手：[笔记](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/so101-simstudio-lab01-pnp/README.md) · [详解](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/so101-simstudio-lab01-pnp/README-details.md)
-- 状态：v0.1.3
+- Verified: a 50K-step checkpoint was trained on MI300X
+- Try it: [note](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/so101-simstudio-lab01-pnp/README.md) · [deep dive](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/so101-simstudio-lab01-pnp/README-details.md)
+- Status: v0.1.3
 
-**[OpenArm 专家轨迹](https://github.com/alexhegit/openarm_mp_labs)** — 用运动规划在 MuJoCo 里批量生成 OpenArm 抓放轨迹，给后面的 VLA 训练当示范数据。抓取位姿可以是标定的顶视抓取，也可以用 GraspGenX 在 ROCm 上合成的 6-DoF 抓取。
+**[OpenArm expert trajectories](https://github.com/alexhegit/openarm_mp_labs)** — Motion planning in MuJoCo produces OpenArm pick-and-place trajectories as demonstration data for later VLA training. Grasp poses can be a calibrated top-down grasp, or a 6-DoF grasp synthesized by GraspGenX on ROCm.
 
-- 验证：Instinct MI300X，ROCm 7.2（容器内 torch 2.7.1+rocm7.2）。轨迹回放本身在 CPU
-- 动手：[笔记](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/openarm-traj-gen-for-vla/README.md) · [详解](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/openarm-traj-gen-for-vla/README-details.md)
-- 状态：数据引擎已跑通
+- Verified: Instinct MI300X, ROCm 7.2 (torch 2.7.1+rocm7.2 inside the container). Trajectory replay itself runs on CPU
+- Try it: [note](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/openarm-traj-gen-for-vla/README.md) · [deep dive](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/openarm-traj-gen-for-vla/README-details.md)
+- Status: the data engine has been run
 
-**[RoboSimLab](https://github.com/alexhegit/RoboSimLab)** — SO-101 的 MuJoCo 场景，并导出 LeRobot 3.0 轨迹。
+**[RoboSimLab](https://github.com/alexhegit/RoboSimLab)** — An SO-101 MuJoCo scene that exports LeRobot 3.0 trajectories.
 
-- 验证：目标平台是 Linux + PyTorch + ROCm
-- 状态：基础场景和脚本化 episode 导出已完成；IK、抓放和真机还在路线上
+- Verified: the target platform is Linux + PyTorch + ROCm
+- Status: the base scene and scripted episode export are done; IK, pick-and-place, and the real robot are still on the roadmap
 
-**[OpenArm Labs Hub](https://github.com/alexhegit/openarm_labs_hub)** — OpenArm 仿真、强化学习、模仿学习和 ROS 的笔记中枢。实现代码在各个仓库里，这里记仓库地图和踩坑。
+**[OpenArm Labs Hub](https://github.com/alexhegit/openarm_labs_hub)** — Notes for OpenArm simulation, reinforcement learning, imitation learning, and ROS. Implementation stays in the individual repos. This one keeps the repo map and the pitfalls.
 
-## 学习：强化学习与 VLA
+## Learning: RL and VLA
 
-**[OpenArm 抓取强化学习](https://github.com/rocPAI-Forge/tech-blog-pub/tree/main/PhysicalAI/openarm-rl-grasp)** — 抓方块任务。策略练出了一种奖励里没有写明的抓法。物理仿真在 CPU 上的 MuJoCo，策略学习在 ROCm 上，训练栈是 [UniLab](https://github.com/Motphys/UniLab)。
+**[OpenArm grasp RL](https://github.com/rocPAI-Forge/tech-blog-pub/tree/main/PhysicalAI/openarm-rl-grasp)** — A cube-grasping task. The policy grew a grip the reward never spelled out. Physics runs in MuJoCo on CPU, policy learning runs on ROCm, and the training stack is [UniLab](https://github.com/Motphys/UniLab).
 
-- 验证：Instinct MI300X / MI210 + ROCm
-- 动手：[笔记](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/openarm-rl-grasp/README.md) · [详解](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/openarm-rl-grasp/README-details.md)
-- 作者：rocPAI-Lab（Alex He, David Li, Andy Luo）
+- Verified: Instinct MI300X / MI210 + ROCm
+- Try it: [note](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/openarm-rl-grasp/README.md) · [deep dive](https://github.com/rocPAI-Forge/tech-blog-pub/blob/main/PhysicalAI/openarm-rl-grasp/README-details.md)
+- Authors: rocPAI-Lab (Alex He, David Li, Andy Luo)
 
-**[MicroDuck 速度跟踪](https://github.com/rocPAI-Forge/microduck_rl_tutorial)** — 全向小车的 PPO 实验课：从奖励设计练到评估视频，再用键盘驱动单机策略。任务定义在 [microduck_rl_unilab](https://github.com/rocPAI-Forge/microduck_rl_unilab)。
+**[MicroDuck velocity tracking](https://github.com/rocPAI-Forge/microduck_rl_tutorial)** — A PPO lab for an omnidirectional robot: reward design, an eval video, then keyboard control of a single-robot policy. Task definitions live in [microduck_rl_unilab](https://github.com/rocPAI-Forge/microduck_rl_unilab).
 
-- 验证：教程里 500×300 的训练计时写的是 MI300X 上约 4 分钟
-- 状态：中英笔记本
+- Verified: the tutorial times the 500×300 run at about 4 minutes on MI300X
+- Status: Chinese and English notebooks
 
-**[Kudada 双足步态](https://github.com/rocPAI-Forge/kudada_rl_unilab)** — 10 自由度双足在平地上做速度跟踪。FastSAC，四种已验收步态：走、蹲走、侧向走、踏步恢复。
+**[Kudada biped gaits](https://github.com/rocPAI-Forge/kudada_rl_unilab)** — Velocity tracking for a 10-DoF biped on flat ground. FastSAC, with four accepted gaits: walk, crouch-walk, lateral walk, and march-recover.
 
-- 验证：UniLab + MuJoCo
-- 状态：仓库带评估视频
+- Verified: UniLab + MuJoCo
+- Status: the repo includes eval videos
 
-**[ROCm Robotics RL Lab](https://github.com/alexhegit/ROCm_Robotics_RL_Lab)** — robosuite 里的 Panda 抬方块，SAC / PPO，在笔记本上把仿真渲染和 PyTorch 都跑在核显上。
+**[ROCm Robotics RL Lab](https://github.com/alexhegit/ROCm_Robotics_RL_Lab)** — Panda lift-cube in robosuite with SAC / PPO. On the laptop, both sim rendering and PyTorch run on the iGPU.
 
-- 验证：Ryzen AI Max+ 395，Radeon 8060S，PyTorch ROCm 7.1
-- 状态：训练、评估和扫参脚本可用
+- Verified: Ryzen AI Max+ 395, Radeon 8060S, PyTorch ROCm 7.1
+- Status: train, eval, and sweep scripts are usable
 
-VLA 训练入口见上面的 SO-101 Lab 01（ACT / SmolVLA）和 OpenArm 专家轨迹。
+VLA training starts from SO-101 Lab 01 (ACT / SmolVLA) and the OpenArm expert trajectories above.
 
-## 具身交互
+## Embodied interaction
 
-**[Reachy Mini Chat](https://github.com/alexhegit/ReachyMiniChat)** — Reachy Mini 的仿真或真机对话：语音识别、Ollama、TTS，情绪动作和口型。可以完全离线。
+**[Reachy Mini Chat](https://github.com/alexhegit/ReachyMiniChat)** — Conversation with a simulated or real Reachy Mini: speech recognition, Ollama, TTS, emotion motion, and lip sync. It can run fully offline.
 
-- 验证：开发机是 Ryzen AI Max+ 395 + Ubuntu 24.04；也在带 Radeon 的 Ubuntu 上跑过
-- 状态：`emo_v1` 到 `emo_v8`，含 Piper 离线 TTS
+- Verified: developed on Ryzen AI Max+ 395 + Ubuntu 24.04; also run on Ubuntu with a Radeon GPU
+- Status: `emo_v1` through `emo_v8`, including offline Piper TTS
 
-**[ReachyBuddy](https://github.com/alexhegit/ReachyBuddy)** — 同一台 Reachy Mini 上的几种模式：语音拍照、用 Ollama 视觉模型巡视、对话，以及带工具调用的 Agent。
+**[ReachyBuddy](https://github.com/alexhegit/ReachyBuddy)** — Several modes on the same Reachy Mini: voice-triggered photos, patrol with an Ollama vision model, chat, and an agent with tool calls.
 
-**[ReachyClaw](https://github.com/alexhegit/ReachyClaw)** — Reachy Mini 接 OpenClaw 做对话和情绪动作。语言模型走 OpenClaw 的 API，机器人侧是 MuJoCo 仿真或真机。
+**[ReachyClaw](https://github.com/alexhegit/ReachyClaw)** — Reachy Mini conversations and emotion motion through OpenClaw. The language model uses the OpenClaw API. The robot side is MuJoCo or the real robot.
 
-**[VLM Demo](https://github.com/alexhegit/vlm-demo-rocm)** — 浏览器里打开摄像头，用 Qwen2.5-VL-3B-Instruct 看图回答。
+**[VLM Demo](https://github.com/alexhegit/vlm-demo-rocm)** — A browser camera feed answered by Qwen2.5-VL-3B-Instruct.
 
-- 验证：ROCm GPU
-- 状态：Web demo（2025-11）
+- Verified: a ROCm GPU
+- Status: web demo (2025-11)
 
-## 推理引擎
+## Inference engines
 
-**[h3-hip.c](https://github.com/alexhegit/h3-hip.c)** — MiniMax-H3 的 HIP 移植。同一棵代码用 `HIP_ARCH` 编给不同卡。
+**[h3-hip.c](https://github.com/alexhegit/h3-hip.c)** — HIP port of MiniMax-H3. One tree; set `HIP_ARCH` for the GPU you compile for.
 
-- 验证：Strix Halo gfx1151、MI210 gfx90a、MI300X gfx942。单卡 MI300X、1344×768、5 秒视频：稠密 50 步约 668 秒，VSA+TAEH3 约 62 秒（[v0.15.0](https://github.com/alexhegit/h3-hip.c)）
-- 状态：持续更新
+- Verified: Strix Halo gfx1151, MI210 gfx90a, MI300X gfx942. On one MI300X, a 1344×768, 5-second video takes about 668 s for dense 50-step and about 62 s for VSA+TAEH3 ([v0.15.0](https://github.com/alexhegit/h3-hip.c))
+- Status: actively updated
 
-**[dsh-plugin-h3-hip](https://github.com/alexhegit/dsh-plugin-h3-hip)** — 把 `h3 --serve` 接到 DeepSeek Harness。需要 h3-hip.c ≥ v0.12-exp。
+**[dsh-plugin-h3-hip](https://github.com/alexhegit/dsh-plugin-h3-hip)** — Connects `h3 --serve` to DeepSeek Harness. Requires h3-hip.c ≥ v0.12-exp.
 
-## 更早的实践
+## Earlier work
 
-[History](history/README.md) 保留 2024–2025 年写下来的复现步骤：W7900 上的 LoRA / QLoRA、iGPU 780M 上的 Ollama、vLLM 容器、EchoMimic、CosyVoice、语音助手和 RAG。每条标了当时的 GPU 和 ROCm 版本。**2026-10 未复测。**
+[History](history/README.md) keeps the 2024–2025 reproduction steps: LoRA / QLoRA on the W7900, Ollama on iGPU 780M, vLLM containers, EchoMimic, CosyVoice, the voice assistant, and RAG. Each entry records the GPU and ROCm version from that time. **Not retested in 2026-10.**
 
 ```
 @misc{Playing with ROCm,
