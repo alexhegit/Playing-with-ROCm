@@ -6,15 +6,15 @@
 
 | | 板块 | 你想找的是 |
 | --- | --- | --- |
-| 1 | [TOP 3](#top3) | 刚发布的 |
-| 2 | [按机器](#by-machine) | Strix Halo、MI300X 或 Radeon 独显上先打开什么 |
-| 3 | [Real2Sim](#real2sim) | 扫描、动态场景、立体深度 |
-| 4 | [仿真](#simulation) | 遥操作、数据集、MuJoCo |
-| 5 | [强化学习与 VLA](#rl-and-vla) | 会抓、会走、会跟速度的策略 |
-| 6 | [机器人](#robots) | 能对话、能看、能拍照的桌面机器人 |
-| 7 | [推理](#inference) | 可以自己编译的 HIP 引擎 |
-| 8 | [上游 PR](upstream/README.md) | 送给其他项目、让它们能在 AMD GPU 上跑的改动 |
-| 9 | [2024–2025](#earlier) | 更早的教程，2026-10 未复测 |
+| 1 | 🔥 [TOP 3](#top3) | 刚发布的 |
+| 2 | 💻 [按机器](#by-machine) | Strix Halo、MI300X 或 Radeon 独显上先打开什么 |
+| 3 | 🎥 [Real2Sim](#real2sim) | 扫描、动态场景、立体深度 |
+| 4 | 🕹️ [仿真](#simulation) | 遥操作、数据集、MuJoCo |
+| 5 | 🎯 [强化学习与 VLA](#rl-and-vla) | 会抓、会走、会跟速度的策略 |
+| 6 | 🤖 [机器人](#robots) | 能对话、能看、能拍照的桌面机器人 |
+| 7 | ⚡ [推理](#inference) | 可以自己编译的 HIP 引擎 |
+| 8 | ↗️ [上游 PR](upstream/README.md) | 送给其他项目、让它们能在 AMD GPU 上跑的改动 |
+| 9 | 📚 [2024–2025](#earlier) | 更早的教程，2026-10 未复测 |
 
 <a id="top3"></a>
 

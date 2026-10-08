@@ -6,15 +6,15 @@ Open-source projects that run on AMD ROCm. This page is only the map: code stays
 
 | | Section | Open this if you want |
 | --- | --- | --- |
-| 1 | [TOP 3](#top3) | what just shipped |
-| 2 | [By machine](#by-machine) | a short list for Strix Halo, MI300X, or a Radeon dGPU |
-| 3 | [Real2Sim](#real2sim) | scans, dynamic scenes, stereo depth |
-| 4 | [Simulation](#simulation) | teleoperation, datasets, MuJoCo |
-| 5 | [RL and VLA](#rl-and-vla) | a policy that grasps, walks, or tracks velocity |
-| 6 | [Robots](#robots) | a desktop robot that talks, sees, or takes a photo |
-| 7 | [Inference](#inference) | a HIP engine you can compile |
-| 8 | [Upstream PRs](upstream/README.md) | patches sent so other projects run on AMD GPUs |
-| 9 | [2024–2025](#earlier) | older guides, not retested in 2026-10 |
+| 1 | 🔥 [TOP 3](#top3) | what just shipped |
+| 2 | 💻 [By machine](#by-machine) | a short list for Strix Halo, MI300X, or a Radeon dGPU |
+| 3 | 🎥 [Real2Sim](#real2sim) | scans, dynamic scenes, stereo depth |
+| 4 | 🕹️ [Simulation](#simulation) | teleoperation, datasets, MuJoCo |
+| 5 | 🎯 [RL and VLA](#rl-and-vla) | a policy that grasps, walks, or tracks velocity |
+| 6 | 🤖 [Robots](#robots) | a desktop robot that talks, sees, or takes a photo |
+| 7 | ⚡ [Inference](#inference) | a HIP engine you can compile |
+| 8 | ↗️ [Upstream PRs](upstream/README.md) | patches sent so other projects run on AMD GPUs |
+| 9 | 📚 [2024–2025](#earlier) | older guides, not retested in 2026-10 |
 
 <a id="top3"></a>
 
