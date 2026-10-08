@@ -2,11 +2,18 @@
 
 [English](README.md) · [目录](../README.zh.md)
 
-这里是 2024–2025 年在 ROCm 上亲手做完、并且仓库里留了步骤或脚本的实践。
+2024–2025 年在 ROCm 上亲手做完、并且仓库里留了步骤或脚本的实践。**2026-10 未复测。** 安装命令、轮子和镜像标签以各文件原文为准。当时没有复现步骤的链接没有收进来。
 
-**2026-10 没有按当前 ROCm 复测。** 安装命令、PyTorch 轮子和容器标签都以各文件原文为准，直接照抄可能会失败。当时没有留下复现步骤的链接没有收进来。
+| | 板块 |
+| --- | --- |
+| 1 | [微调](#finetune) |
+| 2 | [推理](#infer) |
+| 3 | [应用](#apps) |
+| 4 | [小工具](#helpers) |
 
-## 微调
+<a id="finetune"></a>
+
+## 1 · 微调
 
 **LoRA / QLoRA，Radeon Pro W7900**
 
@@ -22,7 +29,9 @@
   - [run_lora.py](training/run_lora.py)
   - [run_qlora_bs4.py](training/run_qlora_bs4.py)
 
-## 推理
+<a id="infer"></a>
+
+## 2 · 推理
 
 **Ollama，Ryzen iGPU 780M**
 
@@ -41,7 +50,9 @@
 - [用 Ollama 跑 Llama 3.2 Vision](https://medium.com/@alexhe.amd/deploy-llama-3-2-vision-quickly-on-amd-rocm-with-ollama-9a23e9a86fea)
 - [在 Kubernetes 上部署 vLLM](https://medium.com/@alexhe.amd/deploy-vllm-service-with-kubernetes-over-amd-rocm-gpu-27cd5321271a)
 
-## 应用
+<a id="apps"></a>
+
+## 3 · 应用
 
 **EchoMimic** — 音频驱动的人像动画。上游没写 ROCm，实践是换上 PyTorch ROCm 轮子后按原仓库步骤跑。
 
@@ -76,7 +87,9 @@
 - 验证窗口：Medium 文章，本仓库没有步骤副本，本页未再跑
 - 动手：[Play Qwen2.5-Omni with AMD GPU](https://medium.com/@alexhe.amd/play-qwen2-5-omni-with-amd-gpu-9d80de58589a)
 
-## 当时的小工具
+<a id="helpers"></a>
+
+## 4 · 当时的小工具
 
 和上面同一时期的脚本，同样 **2026-10 未复测**。
 

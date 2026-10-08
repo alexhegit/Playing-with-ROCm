@@ -2,11 +2,18 @@
 
 [中文](README.zh.md) · [Catalog](../README.md)
 
-Reproduction steps from 2024–2025 that were actually run on ROCm and left in this repo as notes or scripts.
+Reproduction steps from 2024–2025 that were actually run on ROCm and left in this repo as notes or scripts. **Not retested in 2026-10.** Install commands, wheels, and image tags are whatever each file says.
 
-**Not retested against current ROCm in 2026-10.** Install commands, PyTorch wheels, and container tags are whatever each file says. Copying them today can fail. Links that never had a reproduction write-up are not listed here.
+| | Section |
+| --- | --- |
+| 1 | [Fine-tuning](#finetune) |
+| 2 | [Inference](#infer) |
+| 3 | [Applications](#apps) |
+| 4 | [Helpers](#helpers) |
 
-## Fine-tuning
+<a id="finetune"></a>
+
+## 1 · Fine-tuning
 
 **LoRA / QLoRA on Radeon Pro W7900**
 
@@ -22,7 +29,9 @@ Reproduction steps from 2024–2025 that were actually run on ROCm and left in t
   - [run_lora.py](training/run_lora.py)
   - [run_qlora_bs4.py](training/run_qlora_bs4.py)
 
-## Inference
+<a id="infer"></a>
+
+## 2 · Inference
 
 **Ollama on Ryzen iGPU 780M**
 
@@ -41,7 +50,9 @@ Reproduction steps from 2024–2025 that were actually run on ROCm and left in t
 - [Llama 3.2 Vision with Ollama](https://medium.com/@alexhe.amd/deploy-llama-3-2-vision-quickly-on-amd-rocm-with-ollama-9a23e9a86fea)
 - [vLLM on Kubernetes](https://medium.com/@alexhe.amd/deploy-vllm-service-with-kubernetes-over-amd-rocm-gpu-27cd5321271a)
 
-## Applications
+<a id="apps"></a>
+
+## 3 · Applications
 
 **EchoMimic** — Audio-driven portrait animation. Upstream does not mention ROCm. The practice was to install the PyTorch ROCm wheel and then follow the original repo.
 
@@ -76,7 +87,9 @@ Reproduction steps from 2024–2025 that were actually run on ROCm and left in t
 - Window: a Medium article. This repo has no local copy of the steps, and this page did not rerun them
 - Try it: [Play Qwen2.5-Omni with AMD GPU](https://medium.com/@alexhe.amd/play-qwen2-5-omni-with-amd-gpu-9d80de58589a)
 
-## Helpers from the same period
+<a id="helpers"></a>
+
+## 4 · Helpers from the same period
 
 Same window as the entries above. **Not retested in 2026-10.**
 
