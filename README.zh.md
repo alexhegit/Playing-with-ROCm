@@ -30,7 +30,7 @@
 | FastH3 | 97 秒 |
 | VSA + TAEH3 | 62 秒 |
 
-FastH3 和 VSA+TAEH3 是 4 步，不是 NVIDIA 公布的 50 步方案。62 秒的单卡 MI300X 快过已公布的 RTX 5090 全优化（231 秒）和 4 卡 H100 基线（81 秒）。4 卡 H100 全优化仍然更快（23 秒）。这一版没有重测 gfx1151 和 gfx90a。账本：[MI300X 对比 NVIDIA，768p](https://github.com/alexhegit/h3-hip.c/blob/main/docs/perf-runs/MI300X_VS_NVIDIA_768P_2026-10-07.md)。
+FastH3 和 VSA+TAEH3 是 4 步，不是 NVIDIA 公布的 50 步方案。62 秒的单卡 MI300X 快过已公布的 RTX 5090 全优化（231 秒）和 4 卡 H100 基线（81 秒）。4 卡 H100 全优化仍然更快（23 秒）。这一版没有重测 gfx1151 和 gfx90a。账本：[MI300X 对比 NVIDIA，768p](https://github.com/alexhegit/h3-hip.c/blob/main/docs/perf-runs/MI300X_VS_NVIDIA_768P_2026-10-07.md)。[LinkedIn](https://www.linkedin.com/posts/alexhegit_amd-mi300x-rocm-activity-7513883671502974976-uY3n)。
 
 **2026-08-29 · [UniLab 里的 MicroDuck 步态](https://github.com/Motphys/UniLab/pull/1368)。** Pollen Robotics 的 Hugging Face 小型双足。MuJoCo 上的速度任务，PPO 和 SAC。已合并。[LinkedIn](https://www.linkedin.com/posts/alexhegit_microduck-gait-rl-in-unilab-native-rocm-activity-7499461871222231040-HV_P)：在 Radeon Pro W7900 上，用 UniLab 自带的 ROCm 路径训练。
 

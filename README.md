@@ -30,7 +30,7 @@ Three newest releases, newest first. A fourth one replaces the oldest. A LinkedI
 | FastH3 | 97 s |
 | VSA + TAEH3 | 62 s |
 
-FastH3 and VSA+TAEH3 are 4-step, not the published NVIDIA 50-step stack. At 62 s, one MI300X is faster than the published RTX 5090 full-opt cell (231 s) and the H100×4 baseline (81 s). Four H100s at full opt are still faster (23 s). gfx1151 and gfx90a were not re-timed for this tag. Ledger: [MI300X vs NVIDIA, 768p](https://github.com/alexhegit/h3-hip.c/blob/main/docs/perf-runs/MI300X_VS_NVIDIA_768P_2026-10-07.md).
+FastH3 and VSA+TAEH3 are 4-step, not the published NVIDIA 50-step stack. At 62 s, one MI300X is faster than the published RTX 5090 full-opt cell (231 s) and the H100×4 baseline (81 s). Four H100s at full opt are still faster (23 s). gfx1151 and gfx90a were not re-timed for this tag. Ledger: [MI300X vs NVIDIA, 768p](https://github.com/alexhegit/h3-hip.c/blob/main/docs/perf-runs/MI300X_VS_NVIDIA_768P_2026-10-07.md). [LinkedIn](https://www.linkedin.com/posts/alexhegit_amd-mi300x-rocm-activity-7513883671502974976-uY3n).
 
 **2026-08-29 · [MicroDuck gait in UniLab](https://github.com/Motphys/UniLab/pull/1368).** Pollen Robotics' Hugging Face mini biped. Velocity task on MuJoCo, PPO and SAC. Merged. [LinkedIn](https://www.linkedin.com/posts/alexhegit_microduck-gait-rl-in-unilab-native-rocm-activity-7499461871222231040-HV_P): trained on a Radeon Pro W7900 with UniLab's native ROCm path.
 
